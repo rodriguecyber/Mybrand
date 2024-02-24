@@ -1,0 +1,196 @@
+html{
+  scroll-behavior:smooth;
+}
+
+*{margin:0}
+.menubar{
+   background-color: green;
+    overflow: hidden;
+    position:sticky;
+    top:0;
+ }
+    
+        
+ .menubar *{
+      float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1% 2%;
+  font-size: 17px;
+  cursor: pointer;
+  
+        
+    }
+    .brandname{
+        padding-right:30%;
+       
+    }
+    
+       
+
+.menubar a{
+    text-decoration: none;
+    
+}
+    .menubar span:hover,a:hover{
+        background-color: white;
+        color:green;
+    }
+.homepage{
+        height: auto;
+        padding-top: 5%;
+        background-color: green;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+.homepage h1{
+       color: white;
+       text-align: center;
+    }
+    .pp{
+    color:white;
+    text-align: center;
+    width: 45vw;
+    font-size: 20px;
+    margin: 5%  25% ;
+
+    }
+    .homepage input{
+        background-color: white;
+        color:green;
+        width: auto;
+        padding:5px;
+        border-radius: 10px;
+        margin-left: 45%;
+        margin-bottom: 10px;
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .homepage input:hover{
+        color:white;
+        background-color: green;
+    }
+    
+      
+    .skillspage{
+        margin-top: 30px;
+        padding-left: 70px;
+        overflow: hidden;
+    }
+    .skillspage h1 {
+      text-align: center;
+      color: green;
+    }
+    .skills1{
+        padding: 40px 40px;
+        text-align: center;
+        display: block;
+        float: left;
+        width:20vw;
+        margin-left: 20px;
+    }
+    
+
+   .skill{
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    font-family:'Rubik moonrocks';
+    font-size: 40px ;
+    font-weight: bold;
+
+   } 
+   .desc{
+    background-color: white;
+    color: green;
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight:200;
+}
+.aboutpage{
+    height: 40vw;
+    background-color: green;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 5%;
+    overflow: hidden;
+}
+.about1 img{
+    width:100%;
+    height: 60%;
+  
+
+}
+.about1,.about2{
+  display: block;
+  float: left;
+  width: 49.42%;
+  height: 100%;
+    margin-left: 0;
+    overflow: hidden;
+    
+  
+  
+}
+.aboutdiv{
+  width: 60%;
+ border:3px solid white;
+ overflow: hidden;  
+ margin-left: 15%;
+ margin-top: 3%;
+ height:100%;
+ border-top: 3px solid green;
+}
+
+.about2{
+background-color: white;
+border-left: 5px solid green;
+border-right: 4px solid white;
+
+}
+
+
+
+.about1 p{
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5px;
+    color: black;
+}
+.address{
+  display: block;
+  float: left;
+  margin-left: 20px;
+  color: #979696;
+}
+.address p{
+  margin-top: 15px;
+}
+.icon{
+  margin-top: 15px;
+  }
+  .icon p{
+    margin-top: 10px;
+    color: green;
+  }
+
+.icon1{
+  color:green;
+  font-size:  35px;
+  padding-right: 10px;
+}
+.icon a{
+  text-decoration: none;
+  color:rgb(20, 220, 20);
+  margin-bottom: 20px;
+}
+.icon a:hover{
+  color:green;
+}
+.text,.about1 img {
+  display:inline-block
+}
