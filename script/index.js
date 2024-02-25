@@ -27,6 +27,12 @@ let goToHome=()=>{
 let goToAbout=()=>{
   window.scrollTo(1,940)
 }
+let goToPortifolio=()=>{
+  window.scrollTo(1,1510)
+}
+let goToContact=()=>{
+  window.scrollTo(1,2060)
+}
 
 
 // Function to display the current slide
