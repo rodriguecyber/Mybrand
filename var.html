@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy Element</title>
+</head>
+<body>
+    <div id="originalElement">
+        <!-- Your HTML content here -->
+        <p>This is the original element.</p>
+    </div>
+
+    <button onclick="copyElement()">Copy Element</button>
+
+    <script>
+        function copyElement() {
+            // Get the original element
+            var original = document.getElementById("originalElement");
+
+            // Clone the original element
+            var clone = original.cloneNode(true); // true means deep copy including children
+
+            // Append the clone wherever you want it
+            document.body.appendChild(clone);
+        }
+    </script>
+</body>
+</html>
