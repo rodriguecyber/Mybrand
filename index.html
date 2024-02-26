@@ -7,6 +7,7 @@
     <link rel="icon" href="images/user.png" type="image/png">
     <link rel="stylesheet" href="css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="script/index.js"></script>
+    <script src="script/portfolio.js"></script>
      <title>Rodrigue</title>
      </head>
      <body>
@@ -18,7 +19,7 @@
             <span class="portfolio" onclick="goToPortifolio()">Portfolio</span>
             <span class="contact" onclick="goToContact()">Contact </span>
             <span class="blog">Blog</span>
-            <a href="##" class="login">Login</a>
+            <a href="##" class="login" onclick="openLogin()">Login</a>
         
         </div>
      <div class="homepage">
@@ -39,7 +40,7 @@
         <div class="skills1">
           <div class="skill"><\></div> 
           <div class="desc">Programming  languages for  fullstack and  mobile app: HTML,CSS,Javascript,
-            node.js,java,bootsrap,...</div>
+            node.js,java,bootstrap,...</div>
         </div>
     
         
@@ -75,7 +76,7 @@
   <div class="text">
     <h1>Rodrigue RWIGARA </h1>    
    <h1>Full-stack web developer</h1>
-    <p>  Motivated web designer and developer with experience creating custom websites through Javascript, Node JS, PHP,  MySQL, MongoDB, React JS, HTML and CSS. I have strong collaboration skills and proven history of software development. </p>
+    <p>  Motivated web designer and developer with experience in creating custom websites through Javascript, Node JS, PHP,  MySQL, MongoDB, React JS, HTML and CSS. I have strong collaboration skills and proven history of software development. </p>
   </div>
 </div>
     <div class="about2">
@@ -117,12 +118,27 @@
   <div class="portfolio1">
     <h1>Project i participated in </h1>
 
-    <i class="fa-solid fa-chevron-left left"></i>
-    <i class="fa-solid fa-chevron-right right"></i>
+    <i class="fa-solid fa-chevron-left left" onclick="prevProject()"></i>
+    <i class="fa-solid fa-chevron-right right" onclick="nextProject()"></i>
 
     <div class="project-holder">
       <div class="image-holder">
         <img src="/images/server.jpg" alt="server Image"/>
+      </div>
+      <div class="description">
+       <div class="head">
+        <h2>Name of Project </h2> 
+        <span class="year">year</span> 
+     </div>
+     <div class="body">
+      <p>this is project description and language used to develop it</p>
+      <a href="##">visit</a>
+     </div>
+      </div>
+    </div>
+    <div class="project-holder">
+      <div class="image-holder">
+        <img src="/images/globalnetwork.jpg" alt="server Image"/>
       </div>
       <div class="description">
        <div class="head">
@@ -145,6 +161,8 @@
     <textarea placeholder="enter your query"></textarea>
      <input type="submit" value="Send">
   </form>
+  
   </div>
+  
 </body>
 </html>
