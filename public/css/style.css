@@ -20,9 +20,15 @@ html{
   padding: 1% 2%;
   font-size: 17px;
   cursor: pointer;
+  }
+  .dropdown{
+   width:460px;
   
-        
-    }
+  position: relative;
+  display: inline-block;
+    
+  }
+    
     .brandname{
         padding-right:30%;
        
@@ -130,21 +136,21 @@ html{
 .about1,.about2{
   display: block;
   float: left;
-  width: 49.42%;
+  width: 29vw;
   height: 100%;
-    margin-left: 0;
-    overflow: hidden;
+ margin-left: 0;
+    /* overflow: hidden; */
     
   
   
 }
 .aboutdiv{
-  width: 60%;
+  width: 60vw;
  border:3px solid white;
- overflow: hidden;  
+ /* overflow: hidden;   */
  margin-left: 15%;
  margin-top: 3%;
- height:100%;
+ height:auto;
  border-top: 3px solid rgb(115, 115, 233);
 }
 
@@ -339,4 +345,21 @@ border-right: 4px solid white;
     margin-left: 30%;
     margin-top: 20px;
     color:rgb(51, 51, 206);
+  }
+  @media only screen and (max-width:969px) {
+     .skills1{
+      width:80%;
+     }
+     .homepage{
+      border-radius: 0;
+     }
+   .aboutdiv{
+    width:100%
+   }
+   .aboutpage{
+    height: fit-content;
+   }
+   .about1,.about2{
+    width:40%;
+   }
   }

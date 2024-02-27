@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <link rel="icon" href="images/user.png" type="image/png">
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
@@ -13,14 +13,15 @@
      <body>
      <div class="menubar">
           <div class="brandname">RWIGARA Rodrigue</div>
-            <span class="home" onclick="goToHome()">Home</span>
+            <div class="dropdown">
+              <span class="home active" onclick="goToHome()">Home</span>
             <span class="skills" onclick="goToSkills()">Skills</span>
             <span class="about"   onclick="goToAbout()">About us</span>
             <span class="portfolio" onclick="goToPortifolio()">Portfolio</span>
             <span class="contact" onclick="goToContact()">Contact </span>
             <span class="blog">Blog</span>
             <a href="##" class="login" onclick="openLogin()">Login</a>
-        
+          </div>
         </div>
      <div class="homepage">
         <h1>Welcome to Your software engeenering Partner </h1>
