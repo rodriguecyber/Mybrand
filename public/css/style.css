@@ -3,8 +3,12 @@ html{
 }
 
 *{margin:0}
+body{
+  overflow-x: hidden;
+}
+
 .menubar{
-   background-color: rgb(82, 82, 242);
+   background-color: rgba(7, 10, 64, 1);
     overflow: hidden;
     position:sticky;
     top:0;
@@ -14,8 +18,8 @@ html{
         
  .menubar *{
       float: left;
-  display: block;
-  color: #f2f2f2;
+  /* display: block; */
+  color:rgba(246, 249, 85, 1);
   text-align: center;
   padding: 1% 2%;
   font-size: 17px;
@@ -23,343 +27,159 @@ html{
   }
   .dropdown{
    width:460px;
-  
   position: relative;
-  display: inline-block;
+  display: block;
+  float: right;
     
   }
+  .icon{
     
-    .brandname{
-        padding-right:30%;
-       
-    }
+    display: block;
+  float:right;
+  right: 0;
+  position: absolute;
+    display: none;
     
-       
-
-.menubar a{
+  }
+  .icon i{
+    width:40px;
+  }
+  .menubar a{
     text-decoration: none;
-    
-}
-    .menubar span:hover,a:hover{
-        background-color: white;
-        color:rgb(115, 115, 233);
-    }
-.homepage{
-        height: auto;
-        padding-top: 5%;
-        background-color: rgb(115, 115, 233);
-        border-bottom-left-radius: 100px;
-        border-bottom-right-radius: 100px;
-    }
-.homepage h1{
-       color: white;
-       text-align: center;
-    }
-    .pp{
-    color:white;
-    text-align: center;
-    width: 45vw;
-    font-size: 20px;
-    margin: 5%  25% ;
-
-    }
-    .homepage input{
-        background-color: white;
-        color:rgb(115, 115, 233);
-        width: auto;
-        padding:5px;
-        border-radius: 10px;
-        margin-left: 45%;
-        margin-bottom: 10px;
-        border: none;
-        font-size: 17px;
-        cursor: pointer;
-    }
-    .homepage input:hover{
-        color:white;
-        background-color: rgb(115, 115, 233);
-    }
-    
-      
-    .skillspage{
-        margin-top: 30px;
-        padding-left: 50px;
-        overflow: hidden;
-        margin-bottom:  30px;
-    }
-    .skillspage h1 {
-      text-align: center;
-      color: rgb(82, 82, 242);
-    }
-    .skills1{
-        padding-left: 40px;
-        text-align: center;
-        display: block;
-        float: left;
-        width:20vw;
-        margin-left: 20px;
-    }
-    
-
-   .skill{
-    margin-top: 20px;
-    background-color: rgb(82, 82, 242);
-    color: white;
-    font-family:'Rubik moonrocks';
-    font-size: 40px ;
-    font-weight: bold;
-
-   } 
-   .desc{
     background-color: white;
-    color: rgb(82, 82, 242);
-    padding-top: 20px;
-    font-size: 20px;
+    border-radius: 30px;
+    color: blue;
+    }
+    .homepage {
+      
+      background-image: url('/images/Rodrigue.jpg');
+      background-size: 100%;
+      background-position: center;
+      padding: 20px 20px 20px;
+      
+    }
+  .homepage h1{
+    color: rgba(4, 217, 178, 1);
+    font-size: 3em;
     text-align: center;
-    font-weight:200;
-}
-.aboutpage{
-    height: 40vw;
-    background-color: rgb(82, 82, 242);
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    padding-bottom: 5%;
-    overflow: hidden;
-}
-.about1 img{
-    width:100%;
-    height: 60%;
-  
-
-}
-.about1,.about2{
-  display: block;
-  float: left;
-  width: 29vw;
-  height: 100%;
- margin-left: 0;
-    /* overflow: hidden; */
+    position: inherit;
+    margin-bottom: 28%;
+    
     
   
-  
-}
-.aboutdiv{
-  width: 60vw;
- border:3px solid white;
- /* overflow: hidden;   */
- margin-left: 15%;
- margin-top: 3%;
- height:auto;
- border-top: 3px solid rgb(115, 115, 233);
-}
-
-.about2{
-background-color: white;
-border-left: 5px solid rgb(115, 115, 233);
-border-right: 4px solid white;
-
-}
-
-
-
-.about1 p{
-    width: 100%;
-    font-size: 16px;
-    margin-top: 5px;
-    color: black;
-}
-.address{
-  display: block;
-  float: left;
-  margin-left: 20px;
-  color: #979696;
-}
-.address p{
-  margin-top: 15px;
-}
-.icon{
-  margin-top: 15px;
   }
-  .icon p{
-    margin-top: 10px;
-    color:rgb(82, 82, 242);
-  }
-
-.icon1{
-  color:rgb(115, 115, 233);
-  font-size:  35px;
-  padding-right: 10px;
-}
-.icon a{
-  text-decoration: none;
-  color:rgb(82, 82, 242);
-  margin-bottom: 20px;
-}
-.icon a:hover{
-  color:rgb(115, 115, 233);
-}
-.text,.about1 img {
-  display:inline-block
-}
-.portfolio1{
-  height: 30vw;
-  width:100%;
-  padding-bottom: 10%;
-  
-  
-}
-.project-holder{
-  margin-top: 1%;
-  width:50%;
-  margin-left: 15%;
-  overflow: hidden;
-  height: 69%;
-  display: none;
-  background-color: #979696;
-
-  
-  
-}
-.image-holder, .description{
-  width: 48%;
-  display: block;
-  float: left;
-  overflow: hidden;
-  height: 100%;
-  border: 3px solid ;
-  
-}
-.image-holder{
-  width:50%;
-  height: 100%;
-
-
-}
-.image-holder img{
-  width: 100%;
-  height: 100%;
-}
-
-.body{
-  width:100%;
-  height:100% ;
-  overflow: hidden;
-  padding-top: 20px;
- 
-
-}
-.body p{
+  .homepage p{
+    color: rgba(246, 249, 85, 1);
+    font-size: 2em;
+    text-align: center;
+ }
+ .homepage input{
+  background-color: rgba(246, 249, 85, 1);
+  color:rgba(142, 73, 255, 1);
   text-align: center;
-}
-.head{
-  background-color: rgb(90, 138, 90);
+  border-radius: 25px;
+  border: none;
+  margin-left: 48%;
+  margin-top: 20px;
+  padding:7px
+  }
+.aboutpage{
+  background-color:rgba(7, 10, 64, 1) ;
+  padding-left:10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
   display: flex;
   flex-direction: row;
+}
+.left{
+  width: 30%;
+  background-color: white;
+  border: 2px solid rgba(7, 10, 64, 1);
+  overflow: hidden;
+  
+
+}
+.left img{
+  width:30vw;
+  height:60vh;
+  margin-right: 10PX;
+  
+  
+}
+.right{
+  width:50%;
+  background-color: white;
+  border: 2px solid rgba(7, 10, 64, 1);
+  padding: 10px;
+}
+.right h3{
+color:aqua;
+
+}
+.right h5{
+  color: rgba(147, 85, 249, 1);
+  margin-top: 20px;
+}
+.right p{
+  text-align: left;
+}
+.right button{
+  background-color: yellow;
+  color:blueviolet;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: 30%;
+  margin-top: 100px;
+  cursor: pointer;
+
+}
+
+  
+
+.right i{
+  color:blueviolet;
+}
+.skills{
+  background-color: rgba(7, 10, 64, 1);
+  padding:20px;
+  display: flex;
+  flex-direction: row;
+}
+.front,.back, .mobile{
+    width: 30%;
+    margin-left: 20px;
+    /* background-color: aliceblue; */
+   
+    padding-top: 20px;
+    text-align: center;
+
+}
+.skills i{
+  color: rgba(4, 217, 178, 1);
+  font-size: 3em;
+  margin-top: 20px;
  
-  padding-left: 10px;
-  text-align: center;
-  padding: 2px 2px 2px 2px;
-  
 }
-.head h2{
-  width: 100%;
+.skills h5{
+  color:rgba(246, 249, 85, 1);
+  font-size: 2em;
+  font-weight: bolder;
+
 }
-.year{
+.skills p{
   color: white;
-  background-color: rgb(115, 115, 233);
-  width: 20%;
-  
-  text-align: center;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  font-size: 2em;
 }
-.body a{
-  text-decoration: none;
-  background-color: rgb(115, 115, 233);
-  color: white;
-  padding: 5px 20px 5px 20px;
-  position:relative;
-  top: 55%;
-  right:-40%;
-  border-radius:4px;
-  }
-  .right{
-    position:relative;
-    left: 65%;
-  }
-  .left{
-    position: relative;
-    left: 13%;
-  }
-  .right,.left{
-    top:55%;
-    background-color: rgb(100, 100, 206);
-    position: relative;
-  }
-  .contactpage input[type=text],input[type=email], textarea{
-    width: 100%;
-    padding: 12px;
-    border:none;
-    margin-bottom: 16px;
-    margin-top: 6px;
-    resize: vertical; 
-    border-radius: 4px;
-    box-sizing: border-box;
-  
-       }
-       .contactpage input[type=submit]{
-          color: rgb(115, 115, 233) ;
-           background-color: white;
-           padding: 5px;
-           width: 100%;
-           border-radius: 4px;
-           border: none;
-           }
-           .contactpage  input[type=submit]:hover{
-            background-color: rgb(12, 34, 12);
-            color: rgb(197, 189, 189);
-           } 
- .contactpage{
-  padding-left: 25%;
-  padding-top: 3%;
-  padding-bottom: 10%;
- background-color: rgb(115, 115, 233);
+
+
+
+    
+   
+    
+    
+    
+    
+    
     
   
- }
- .contactpage h1{
-  margin-top: 6px;
-  margin-bottom: 6px;
-  margin-left: 5%;
-    border: none;
-  }
-  .contactpage form{
-    border: 3px solid whitesmoke;
-    width: 50%;
-    background-color: rgb(115, 115, 233);
-    padding: 15px;
-  }
-  .portfolio1 h1{
-    margin-left: 30%;
-    margin-top: 20px;
-    color:rgb(51, 51, 206);
-  }
-  @media only screen and (max-width:969px) {
-     .skills1{
-      width:80%;
-     }
-     .homepage{
-      border-radius: 0;
-     }
-   .aboutdiv{
-    width:100%
-   }
-   .aboutpage{
-    height: fit-content;
-   }
-   .about1,.about2{
-    width:40%;
-   }
-  }
