@@ -5,35 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="icon" href="images/user.png" type="image/png">
+   <link rel="stylesheet" href="/public/css/responsiveness.css">
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
     <script src="/public/js/portfolio.js"></script>
      <title>Rodrigue</title>
      </head>
      <body>
+
      <div class="menubar">
           <div class="brandname">RWIGARA Rodrigue</div>
             <div class="dropdown">
               <span class="home active" onclick="goToHome()">Home</span>
-            <span class="skill" onclick="goToSkills()">Skills</span>
-            <span class="about"   onclick="goToAbout()">About us</span>
+              <span class="about"   onclick="goToAbout()">About us</span>
+              <span class="skills" onclick="goToSkills()">Skills</span>      
             <span class="portfolio" onclick="goToPortifolio()">Portfolio</span>
             <span class="contact" onclick="goToContact()">Contact </span>
-            <span class="blog">Blog</span>
+            <span class="blog" onclick="goToBlog()">Blog</span>
             <a href="##" class="login" onclick="openLogin()">Login</a>
           </div>
           <div class="icon"><i class="fa fa-bars" ></i></div>
         </div>
+
      <div class="homepage">
       <h1>Welcome to your software engeenering partener</h1>
        <p> if you are a company or  person and you need  to hire or collaborate with   
         software engeener or Website developer both back-end and front-end contact me</p>
         <input type="submit" value="Contact me... " onclick="goToAbout()">
      </div>
+
      <div class="aboutpage"> 
+      <h2 class="page-title">About Me</h2>
+      <div class="aboutdiv">
+
       <div class="left">
         <img src="/images/passport.jpg" alt="profile">
       </div>
+      
       <div class="right">
         <h3>RWIGARA Rodrigue</h3>
         <h5>Full-stack developer</h5>
@@ -45,7 +53,12 @@
        </button>
       </div>
       </div>
-      <div class="skills">
+    </div>
+    
+      <div class="skillspage">
+        <h2 class="page-title">My Skills in different Technologies </h2>
+        <div class="skillsdiv">
+        
         <div class="front">
           <h5>Front-end </h5>
           <span class="figma">
@@ -83,7 +96,7 @@
           
         </div>
         <div class="mobile">
-          <h5>Mobile development</h5>
+          <h5>Other Technologies</h5>
           <span>
             <i class="fa-brands fa-android"></i>
             <p>Flutter</p>
@@ -94,11 +107,109 @@
           </span>
         </div>
       </div>
-    
+    </div>
+
+    <div class="portfolio-page">
+      <h2 class="page-title">My Portfolio</h2>
+      <div class="portfolio-div">
+      <i class="fa-solid fa-chevron-left slide-left"></i>
+      <div class="portfolio-image ">
+        <img src="/images/globalnetwork.jpg" alt="green project">
+      </div>
+      <div class="portfolio-details" >
+        <h3>The Green E-commerce</h3>
+        <p> Online market platform developed in year of 2020 and i was acting like front-end developer using ReactJS </p>
+        <button>Visit site</button>
+      </div>
      
-    
-  
-  
-  
+    <i class="fa-solid fa-chevron-right slide-right"></i>
+    </div>
+  </div>
+    <div class="contactpage">
+      <h2 class="page-title">Get in touch with us</h2>
+      <form action="#">
+        <label for="name">Full Name</label>
+        <input type="text" placeholder="Name">
+        <label for="email">Email Address</label>
+        <input type="email" placeholder="Email">
+        <label for="message">Message</label>
+        <textarea name="message" id="" placeholder="enter your message"></textarea>
+       <input type="checkbox" value="">Subscribe to our Newsletter
+       <input type="submit" value="Send">
+       </form>
+       <div class="address">
+        <span class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-telegram"></i>
+         </span>
+         <span class="add">
+        <i class="fa-solid fa-phone"></i>
+        <p> 250 786 605 505</p>
+         </span>
+        <span>
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Kigali-Kicukiro</p>
+      </span>
+       </div>
+    </div>
+     <div class="blogs">
+      <h2 class="page-title">Explore Blogs </h2>
+      <div class="article-holder">
+        <div class="article">
+          <img src="/images/server.jpg" alt="">
+          <h3>Andela ATLP</h3>
+          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
+          <span class="icons">
+            <i class="fa-regular fa-thumbs-up"></i>
+            <p>25</p>
+            <i class="fa-regular fa-comment"></i>
+            <p>25</p>
+            <i class="fa-solid fa-share-nodes"></i>
+          </span>
+        </div>
+        <div class="article">
+          <img src="/images/server.jpg" alt="">
+          <h3>Andela ATLP</h3>
+          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
+          <span class="icons">
+            <i class="fa-regular fa-thumbs-up"></i>
+            <p>25</p>
+            <i class="fa-regular fa-comment"></i>
+            <p>25</p>
+            <i class="fa-solid fa-share-nodes"></i>
+          </span>
+        </div>
+        <div class="article">
+          <img src="/images/server.jpg" alt="">
+          <h3>Andela ATLP</h3>
+          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
+          <span class="icons">
+            <i class="fa-regular fa-thumbs-up"></i>
+            <p>25</p>
+            <i class="fa-regular fa-comment"></i>
+            <p>25</p>
+            <i class="fa-solid fa-share-nodes"></i>
+          </span>
+        </div>
+
+      </div>
+     </div>
+     <div class="footer">
+      <div class="left-footer">
+        <h5>Copyright@rwigararodrigue</h5>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i>
+      </div>
+      <div class="right-footer">
+
+      </div>
+     </div>
 </body>
 </html>
