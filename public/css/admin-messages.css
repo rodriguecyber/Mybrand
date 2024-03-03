@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:rgb(1, 1, 41);
+  
+}
+a{
+    color: yellow;
+    text-decoration: none;
+    margin-right: 3vw;
+    font-size: 2vw;
+}
+h2{
+    color: aqua;
+    font-size: 2vw;
+    margin-left: 25%;
+
+}
+.message-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 25%;
+    margin-top: 1vh;
+    padding: 0;
+
+}
+.sender{
+    display: flex;
+    flex-direction: column;    
+    margin-top: 20px;
+
+}
+.sender h4{
+    color: white;
+    font-weight: bolder;
+    text-align:center;
+    font-size: 2.5vw;
+
+}
+.sender p{
+    color: white;
+    font-weight: bolder;
+    text-align:center;
+    font-size: 1.5vw;
+    }
+.message{
+    display: none;
+    background-color: rgb(240, 248, 255,0.7);
+    padding: 12px;
+    position: relative;
+    width: 60%;
+    margin-left: 20%;
+    padding: 0;
+    }
+    .message h4{
+        text-align: center;
+        font-size: 1.5vw;
+        margin-right: 4vw;
+    }
+    .close{
+        float: right;
+        font-size: 1.5vw;
+    
+    }
+    .close:hover{
+       color: rgb(1, 1, 41,0.8);
+    
+    }
+    .message p{
+        text-align: center;
+        font-size: 1vw;
+       
+    }
+    
+    .text{
+        padding: 1vw;
+        padding-right: 1vw;
+        background-color: rgb(240, 248, 255,0.3 );
+      
+    }
+    .text p{
+        text-align: left;
+        font-size: 1.2vw;
+    }
+    .reply{
+     display:flex;
+    flex-direction: row;
+    margin-top: 10px;
+    
+    }
+     .reply *{
+        margin-left: 1vw;
+        color: rgb(21, 142, 142);
+     }
+     .reply input[type=text]{
+        border:none;
+        background-color: inherit;
+        border-bottom: 1.5px solid rgb(21, 142, 142);
+        width: 50%;
+     }
+     .reply i ,.reply p{
+        font-size:  1.5vw;
+     }
