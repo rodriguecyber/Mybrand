@@ -6,7 +6,13 @@ html{
 body{
   overflow-x: hidden;
 }
-
+.page-title{
+  font-size:3vw;
+  text-align: center;
+ padding-bottom: 30px;
+ padding-top: 20px;
+ color: rgba(4, 217, 178, 1);
+}
 .menubar{
    background-color: rgba(7, 10, 64, 1);
     overflow: hidden;
@@ -19,7 +25,7 @@ body{
  .menubar *{
       float: left;
   /* display: block; */
-  color:rgba(246, 249, 85, 1);
+  color:white;
   text-align: center;
   padding: 1% 2%;
   font-size: 17px;
@@ -38,39 +44,51 @@ body{
   float:right;
   right: 0;
   position: absolute;
-    display: none;
+  display: none;
+    
     
   }
   .icon i{
     width:40px;
-  }
+    color: white
+    }
+    .icon i:hover{
+      color:rgba(4, 217, 178, 1)
+    }
   .menubar a{
     text-decoration: none;
-    background-color: white;
+    background-color:rgba(4, 217, 178, 0.8);
     border-radius: 30px;
-    color: blue;
+    color:white;
+    font-weight: bolder;
+    }
+    .menubar a:hover{
+      background-color: white;
+      color: rgba(4, 217, 178, 1);
+    }
+    .menubar span:hover{
+      color: rgba(4, 217, 178, 1);
     }
     .homepage {
       
       background-image: url('/images/Rodrigue.jpg');
       background-size: 100%;
       background-position: center;
-      padding: 20px 20px 20px;
+      padding: 1.5vw 2vw 2vw;
       
     }
   .homepage h1{
     color: rgba(4, 217, 178, 1);
-    font-size: 3em;
+    font-size: 4vw;
     text-align: center;
     position: inherit;
-    margin-bottom: 28%;
-    
-    
-  
-  }
+    margin-bottom: 25%;
+    font-weight: bolder;
+    }
   .homepage p{
     color: rgba(246, 249, 85, 1);
-    font-size: 2em;
+    font-weight: bolder;
+    font-size: 2vw;
     text-align: center;
  }
  .homepage input{
@@ -80,68 +98,89 @@ body{
   border-radius: 25px;
   border: none;
   margin-left: 48%;
-  margin-top: 20px;
-  padding:7px
+  margin-top: 2vw;
+  padding:0.7vw;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 1.2vw;
   }
-.aboutpage{
-  background-color:rgba(7, 10, 64, 1) ;
-  padding-left:10%;
-  padding-top: 10%;
+  .homepage input:hover{
+ background-color: rgba(246, 249, 85, 0.8 );
+ color: rebeccapurple;
+  }
+  .aboutpage{
+    background-color:rgba(7, 10, 64, 1) ;
+    padding-top: 10vw;
+  }
+.aboutdiv{
+  padding-left:25vw;
   padding-bottom: 10%;
   display: flex;
   flex-direction: row;
+  width: 70%;
 }
 .left{
   width: 30%;
-  background-color: white;
-  border: 2px solid rgba(7, 10, 64, 1);
+  background-color: inherit;
+  border: 2px solid rgba(4, 217, 178, 1);
+  overflow: hidden;
   overflow: hidden;
   
 
 }
 .left img{
-  width:30vw;
-  height:60vh;
-  margin-right: 10PX;
-  
-  
-}
+  width:100%;
+  height:100%;
+  }
 .right{
   width:50%;
-  background-color: white;
-  border: 2px solid rgba(7, 10, 64, 1);
-  padding: 10px;
+  background-color:inherit;
+  border: 2px solid rgba(4, 217, 178, 1);
+  padding: 1.5vw;
+  text-align: center;
 }
 .right h3{
-color:aqua;
-
+color:rgba(4, 217, 178, 1);
+font-size: 3vw;
 }
 .right h5{
   color: rgba(147, 85, 249, 1);
-  margin-top: 20px;
+  margin-top: 1vw;
+  font-weight: bolder;
+  margin-bottom: 1vw;
+  font-size: 2vw;
 }
 .right p{
+  margin-bottom: 1.5vw;
   text-align: left;
+  color: rgba(4, 217, 178, 1);
+  font-size: 1.5vw;
+  font-family: sans-serif;
 }
 .right button{
-  background-color: yellow;
-  color:blueviolet;
+  background-color: rgba(246, 249, 85, 1);
+  color: rgba(147, 85, 249, 1);
   border: none;
-  padding: 5px;
+  padding: 0.5vw;
   border-radius: 4px;
   margin-left: 30%;
-  margin-top: 100px;
+  
   cursor: pointer;
-
+  font-weight: bolder;
 }
-
+.right button:hover{
+  background-color: rgba(246, 249, 85, 0.8 );
+  color: rebeccapurple;
+   }
   
 
 .right i{
-  color:blueviolet;
+  color: rgba(147, 85, 249, 1);
 }
-.skills{
+.skillspage{
   background-color: rgba(7, 10, 64, 1);
+}
+.skillsdiv{
   padding:20px;
   display: flex;
   flex-direction: row;
@@ -155,22 +194,250 @@ color:aqua;
     text-align: center;
 
 }
-.skills i{
+.skillsdiv i{
   color: rgba(4, 217, 178, 1);
-  font-size: 3em;
+  font-size: 5vw;
   margin-top: 20px;
  
 }
-.skills h5{
+.skillsdiv h5{
   color:rgba(246, 249, 85, 1);
-  font-size: 2em;
+  font-size: 3vw;
   font-weight: bolder;
 
 }
-.skills p{
+.skillsdiv p{
   color: white;
-  font-size: 2em;
+  font-size: 3vw;
 }
+.portfolio-page{
+  background-color: rgba(7, 10, 64, 1);
+}
+.portfolio-div{
+  background-color:rgba(7, 10, 64, 1);
+  display: flex;
+  flex-direction: row;
+  padding: 10dvw;
+  padding-left: 20vw;
+  width:60%
+}
+.portfolio-image {
+  margin-left: 3vw;
+width: 35%;
+}
+
+.portfolio-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-details{
+  padding-left: 2vw;
+  margin-right: 2vw;
+  margin-right: 3vw;
+  width:70%
+}
+
+.slide-right,.slide-left{
+  margin-top: 3vw;
+  color:rgba(246, 249, 85, 1);
+  font-size: 4vw;
+
+}
+.slide-left:hover, .slide-right:hover{
+cursor: pointer;
+color: rgba(246, 249, 85, 0.7);
+}
+.portfolio-details h3{
+color: rgba(4, 217, 178, 1);
+background-color: rgba(45, 75, 166, 0.65);
+padding:0.2vw;
+border-radius: 5px;
+text-align: center;
+font-size: 2.6vw;
+}
+.portfolio-details p{
+  text-indent: 1vw;
+  padding: 0.1vw;
+  margin-top: 1vw;
+  font-size: 1.6vw;
+  color:white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.portfolio-details button{
+  background-color: rgba(246, 249, 85, 1);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4vw;
+  margin-left:5vw;
+  margin-top: 2%;
+  color: rgba(147, 85, 249, 1);
+  font-weight: bolder;
+}
+.portfolio-details button:hover{
+  background-color: rgba(246, 249, 85, 0.7);
+  color:rgba(147, 85, 249, 1);
+  cursor: pointer;
+}
+.contactpage {
+   align-items: center;
+  background-color:  rgba(7, 10, 64, 1);
+}
+
+.contactpage form {
+  padding: 30px;
+  border-radius: 4px;
+  border: 2px solid  rgba(4, 217, 178, 1); 
+  width: 50%;
+  background-color: rgba(4, 217, 178, 0.1);
+  color: rgba(4, 217, 178, 1);
+  margin-bottom: 20px;
+  margin-left: 20%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.contactpage form textarea, .contactpage input[type=text],.contactpage input[type=email], .contactpage input[type=submit]{
+  width: 100%; 
+ margin-bottom: 10px;
+ margin-top: 10px;
+ border:2px solid rgba(4, 217, 178, 1);
+ background-color: transparent;
+ padding: 1.2vw;
+ box-sizing: border-box
+ 
+; }
+ .contactpage form label{
+  width:50%;  float: left;
+  color: rgba(4, 217, 178, 1);
+}
+.contactpage textarea{
+resize: vertical;
+}
+.contactpage form input[type=submit]{
+  background-color: rgba(4, 217, 178, 1);
+  color: rgba(142, 73, 255, 1);
+  font-size: 1em;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
+  padding: 0.2vw;
+  
+}
+
+
+.contactpage form input[type=submit]:hover{
+  background-color: rgba(4, 217, 178, 0.8);
+  
+}
+.address{
+  display: flex;
+  width:50% ;
+  margin-left: 25%;
+  padding-top: 1vw;
+  flex-direction: row;
+}
+.address i{
+  margin-left :1.2vw;
+  margin-right: 0.3vw;
+}
+.address i:hover{
+  color: rgba(4, 217, 178, 1);
+  cursor: pointer;
+  
+}
+.address i,.address p{
+  padding-left: 0.5vw;
+  color: rgba(4, 217, 178, 0.5);
+  display: block;
+  float: left;
+  }
+  .address p{
+  
+    color:rgba(4, 217, 178, 1);
+    padding: 0;
+  }
+  
+
+.blogs{
+  background-color: rgba(7, 10, 64, 1);
+ padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.article-holder{
+  margin-left: 10vw;
+  width: 80%;
+ margin-top: 4vw;
+  display: flex;
+  flex-direction: row;
+  
+
+ 
+}
+.article{
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  flex-basis: 50%;
+  margin-right: 1%;
+  margin-left: 1%;
+  border: 2px solid rgba(4, 217, 178, 1) ;
+  
+}
+.article img{
+  width: 100%;
+}
+.article h3{
+  font-size: 2vw;
+  color:  rgba(4, 217, 178, 1) ;
+  margin: 1.2vw;
+
+}
+.article p{
+  color:  rgba(4, 217, 178, 1) ;
+  font-size: 1.6vw;
+  margin-left: 1.2vw;
+  margin-right: 0.5vw;
+}
+.icons{
+ display: flex;
+ flex-direction: row;
+ padding-top: 0.8vw;
+ padding-bottom:0.8vw;
+padding-left: 20%;
+}
+.icons i{
+  color: rgba(4, 217, 178, 0.5);
+  margin-left :1.5vw;
+}
+.icons p{
+  font-size: 1.3vw;
+  margin: 0;
+  margin-left :0.2vw;
+}
+.icons i:hover{
+  color: rgba(4, 217, 178, 1);
+  cursor: pointer;
+}
+.footer{
+  background-color: rgba(4, 217, 178, 0.8);
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.left-footer{
+  display: flex;
+  flex-direction: row;
+}
+.left-footer *{
+  margin-right: 10px;
+  color:rgb(41, 0, 108);
+  font-weight: bolder;
+}
+
+
+
 
 
 
