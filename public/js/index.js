@@ -16,4 +16,16 @@ let goToContact=()=>{
 let goToBlog=()=>{
   window.scrollTo(1,3000)
 }
+let openMenu = () =>{
+  document.getElementById('drop').style.display="block"
+}
+let closeMenu = () =>{
+  document.getElementById('drop').style.display="none"
+}
+ let openLogin=()=>{
+   document.getElementById('login').style.display="block"
+ }
+ let closeLogin=()=>{
+   document.getElementById('login').style.display="none"
+ }
 

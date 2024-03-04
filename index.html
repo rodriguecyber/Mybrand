@@ -8,14 +8,13 @@
    <link rel="stylesheet" href="/public/css/responsiveness.css">
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
-    <script src="/public/js/portfolio.js"></script>
      <title>Rodrigue</title>
      </head>
      <body>
 
      <div class="menubar">
           <div class="brandname">RWIGARA Rodrigue</div>
-            <div class="dropdown">
+            <div id="drop" class="dropdown">
               <span class="home active" onclick="goToHome()">Home</span>
               <span class="about"   onclick="goToAbout()">About us</span>
               <span class="skills" onclick="goToSkills()">Skills</span>      
@@ -23,8 +22,9 @@
             <span class="contact" onclick="goToContact()">Contact </span>
             <span class="blog" onclick="goToBlog()">Blog</span>
             <a href="##" class="login" onclick="openLogin()">Login</a>
+            <i  class="fa-regular fa-circle-xmark " onclick="closeMenu()"></i>
           </div>
-          <div class="icon"><i class="fa fa-bars" ></i></div>
+          <div  class="icon" onclick="openMenu()"><i class="fa fa-bars" ></i></div>
         </div>
 
      <div class="homepage">
@@ -210,6 +210,22 @@
       <div class="right-footer">
 
       </div>
+     </div>
+     <div class="login-page" id="login">
+      <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
+      <form action="/admin/Admin.html">
+        <h1>Admin Login</h1>
+        <div>
+          <i class="fa-regular fa-envelope"></i>
+      <input type="Email" placeholder="Email:" id="">
+    </div>
+        <div>
+          <i class="fa-solid fa-lock"></i>
+      <input type="Password" placeholder="Password" id="">
+    </div>
+    <input type="submit" value="Login">
+    <p><a href="##Reset-password">Reset password</a></p>
+      </form>
      </div>
 </body>
 </html>
