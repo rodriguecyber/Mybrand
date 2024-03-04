@@ -6,7 +6,6 @@ html{
 body{
   overflow-x: hidden;
   width: 100%;
-  background-color: rgba(7, 10, 64, 1);
 }
 .page-title{
   font-size:3vw;
@@ -20,6 +19,7 @@ body{
     overflow: hidden;
     position:sticky;
     top:0;
+    width: 100%;
     
  }
     
@@ -117,6 +117,7 @@ body{
   .aboutpage{
     background-color:rgba(7, 10, 64, 1) ;
     padding-top: 10vw;
+    width: 100%;
   }
 .aboutdiv{
   padding-left:25vw;
@@ -185,6 +186,7 @@ font-size: 3vw;
 }
 .skillspage{
   background-color: rgba(7, 10, 64, 1);
+  width: 100%;
 }
 .skillsdiv{
   padding:20px;
@@ -218,6 +220,7 @@ font-size: 3vw;
 }
 .portfolio-page{
   background-color: rgba(7, 10, 64, 1);
+  width: 100%;
 }
 .portfolio-div{
   background-color:rgba(7, 10, 64, 1);
@@ -288,6 +291,7 @@ font-size: 2.6vw;
 .contactpage {
    align-items: center;
   background-color:  rgba(7, 10, 64, 1);
+  width: 100%;
 }
 
 .contactpage form {
@@ -368,6 +372,7 @@ resize: vertical;
   background-color: rgba(7, 10, 64, 1);
  padding-top: 50px;
   padding-bottom: 50px;
+  width: 100%;
 }
 
 .article-holder{
