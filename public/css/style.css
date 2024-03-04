@@ -5,6 +5,7 @@ html{
 *{margin:0}
 body{
   overflow-x: hidden;
+  width: 100%;
 }
 .page-title{
   font-size:3vw;
