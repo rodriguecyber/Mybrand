@@ -6,7 +6,7 @@ html{
 body{
   overflow-x: hidden;
   background-color: blue;
-
+ width: 100%;
 }
 .page-title{
   font-size:3vw;
