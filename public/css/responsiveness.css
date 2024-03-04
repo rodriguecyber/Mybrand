@@ -67,7 +67,7 @@
    
   }
   .dropdown *{
-    clear: left;
+    clear: both;
    }
    .dropdown i{
     display: block;

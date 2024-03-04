@@ -307,8 +307,8 @@ font-size: 2.6vw;
  border:2px solid rgba(4, 217, 178, 1);
  background-color: transparent;
  padding: 1.2vw;
- box-sizing: border-box
- 
+ box-sizing: border-box;
+ outline: none;
 ; }
  .contactpage form label{
   width:50%;  float: left;
@@ -467,9 +467,10 @@ padding-left: 20%;
     position: absolute;
     background-color: aquamarine;
     width: 30%;
-    height: 50%;
+   height: 50%;
     left:35%;
     top: 25%;
+    
     padding-top: 12px;
   }
   .login-page form h1{
@@ -484,7 +485,7 @@ padding-left: 20%;
     border: none;
     width: 90%;
     height: 30px;
-    
+    outline: none;
 }
 .login-page div{
   background-color: rgb(128, 219, 219);
@@ -508,6 +509,7 @@ padding-left: 20%;
  border: none;
  border-radius: 10px;
  padding: 5px 0;
+ 
 }
 .login-page form input[type=submit]:hover{
   background-color: rgba(45, 75, 166, 0.9);
