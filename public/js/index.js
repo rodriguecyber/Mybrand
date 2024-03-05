@@ -28,4 +28,5 @@ let closeMenu = () =>{
  let closeLogin=()=>{
    document.getElementById('login').style.display="none"
  }
+ 
 
