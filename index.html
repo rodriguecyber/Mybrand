@@ -16,13 +16,13 @@
      <div class="menubar">
           <div class="brandname">RWIGARA Rodrigue</div>
             <div id="drop" class="dropdown">
-              <span class="home active" onclick="goToHome()">Home</span>
-              <span class="about"   onclick="goToAbout()">About us</span>
-              <span class="skills" onclick="goToSkills()">Skills</span>      
-            <span class="portfolio" onclick="goToPortifolio()">Portfolio</span>
-            <span class="contact" onclick="goToContact()">Contact </span>
-            <span class="blog" onclick="goToBlog()">Blog</span>
-            <a href="##" class="login" onclick="openLogin()">Login</a>
+              <span class="home active" onclick="goToHome() ;closeMenu()">Home</span>
+              <span class="about"   onclick="goToAbout();closeMenu()">About us</span>
+              <span class="skills" onclick="goToSkills();closeMenu()">Skills</span>      
+            <span class="portfolio" onclick="goToPortifolio();closeMenu()">Portfolio</span>
+            <span class="contact" onclick="goToContact();closeMenu()">Contact </span>
+            <span class="blog" onclick="goToBlog();closeMenu()">Blog</span>
+            <a href="##" class="login" onclick="openLogin();closeMenu()">Login</a>
             <i  class="fa-regular fa-circle-xmark " onclick="closeMenu()"></i>
           </div>
           <div  class="icon" onclick="openMenu()"><i class="fa fa-bars" ></i></div>

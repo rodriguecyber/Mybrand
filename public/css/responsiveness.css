@@ -1,4 +1,4 @@
-@media screen and (max-width:890px) {
+@media screen and (max-width:1024px) {
     
     .icon{
         display: block;
@@ -7,18 +7,18 @@
     .article-holder{
        
         flex-direction: column;
-        width: 50vw;
-        margin-left: 25vw;
+        width:  70%;;
+        margin-left: 15%;
     }
   .article{
     margin: 2vw;
-
+    
   }
   .article p{
-  font-size: 2.5vw;
+  font-size: 3.5vw;
   }
   .article h3{
-    font-size: 3vw;
+    font-size: 4vw;
   }
   .aboutdiv{
     flex-direction: column;
@@ -57,12 +57,12 @@
   .dropdown{
    position: fixed;
    overflow-x: hidden;
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     background-color:rgba(7, 10, 64, 1);
     z-index: 1;
-    padding-top:25%;
-    padding-left: 25%;
+    padding-top:10%;
+    padding-left: 40%;
     display: none;
     
    
@@ -91,5 +91,49 @@
   left: 5%;
   top:20%;
   }
+  .login-page  form i{
+    font-size: 3vw;
+  }
+  .homepage p{
+    font-size: 3vw;
+  }
+  .homepage input[type=submit]{
+    font-size: 2vw;
+  }
+  .message-box{
+    width:100%;
+    top: 0;
+    height: 100%;
+    background-color: rgb(218, 214, 214);
+
+    
+  }
+  .message-box-heading *{
+  font-size: 3.5vw;
+  color: rgba(7, 10, 64, 1);
+  }
+  .messages i{
+    font-size:6vw;
+    color: rgba(7, 10, 64, 1);
+  }
+  .messages .sender *{
+    font-size: 3.5vw;
+    color: rgba(7, 10, 64, 1);
+  }
+  .message-body{
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+  }
+  .message-body-heading .userlogo{
+   font-size: 5vw;
+  }
+  .message-body-heading p{
+    font-size: 3vw;
+  }
+  .message-body-heading .downarrow{
+    font-size: 3vw;
+  }
+
     }
 
