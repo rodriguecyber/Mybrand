@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="/public/css/responsiveness.css">
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
+    <script src="/public/js/admin.js"></script>
      <title>Rodrigue</title>
      </head>
      <body>
@@ -19,7 +20,7 @@
               <a class="about"   onclick="goToAbout()">About us</a>
               <a class="skills" onclick="goToSkills()">Skills</a>      
             <a href="/admin/portfolio.html">Portfolio</a>
-            <a href="/admin/messages.html">Message </a>
+            <a  onclick="showMessage()">Message </a>
             <a href="/admin/blogs.html">Blog</a>
             <a href="/index.html" class="login" >Logout</a>
             <i  class="fa-regular fa-circle-xmark " onclick="closeMenu()"></i>
@@ -122,6 +123,53 @@
       <div class="right-footer">
 
       </div>
+     </div>
+     <div class="message-box" id="mess-box">
+      <div class="message-box-heading">
+        <p>Chats</p>
+        <span >
+        <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+        <i class="fa-solid fa-xmark" onclick="hideMessage()"></i>
+        </span>
+      </div>
+      <div class="message-body" id="mess">
+        <div class="message-body-heading">
+          
+            <i class="fa-regular fa-circle-user userlogo"></i>
+            <p>Rukundo soleil</p>
+            <i class="fa-solid fa-chevron-down" onclick="closeMessage()"></i>
+        </div>
+         <div class="messaging-part"> </div>
+        </div>
+      <div class="messages"  onclick="openMessage()">
+        <i class="fa-regular fa-circle-user userlogo"></i>
+        <div class="sender">
+        <h4>Rukundo soleil</h4>
+         <p>sat 20:10</p>
+        </div>
+      </div>
+      <div class="messages" onclick="openMessage()">
+        <i class="fa-regular fa-circle-user userlogo"></i>
+        <div class="sender">
+        <h4>Rukundo soleil</h4>
+         <p>sat 20:10</p>
+        </div>
+      </div>
+      <div class="messages" onclick="openMessage()">
+        <i class="fa-regular fa-circle-user userlogo"></i>
+        <div class="sender">
+        <h4>Rukundo soleil</h4>
+         <p>sat 20:10</p>
+        </div>
+      </div>
+      <div class="messages" onclick="openMessage('4')">
+        <i class="fa-regular fa-circle-user userlogo"></i>
+        <div class="sender">
+        <h4>Rukundo soleil</h4>
+         <p>sat 20:10</p>
+        </div>
+      </div>
+      
      </div>
 </body>
 </html>

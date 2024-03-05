@@ -19,7 +19,7 @@ body{
 .menubar{
    background-color: rgba(7, 10, 64, 1);
     overflow: hidden;
-    position:sticky;
+    position:fixed;
     top:0;
     width: 100%;
     
@@ -550,9 +550,72 @@ margin-top: 10px;
 .login-page form a{
   text-decoration: none;
 }
+.message-box{
+position:fixed;
+z-index: 1;
+width:25%;
+height: 80%;
+bottom: 0;
+right: 0;
+background-color: rgba(7, 10, 64, 0.9);
+display: none;
+}
+.message-body{
+ 
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}.message-box-heading{
+  border-bottom: 1px solid black;
+display: flex;
+flex-direction: row;
+  width: 100%;
+  justify-content:space-between;
+  color:white;
+  font-size: 1.5vw;
+ 
+ 
+}
+.message-body-heading{
+  background-color: rgba(7, 10, 64, 1);
+  display: flex;
+  flex-direction: row;
+}
+.message-body-heading *{
+  color:white;
+  font-size: 1.5vw;
+  margin-right: 1vw;
+  margin-top: 5px;
+}
+.message-body-heading .userlogo{
+  font-size: 3vw;
+  margin-top: 0;
+}
+.messages{
+  display: flex;
+  flex-direction: row;
+  margin: 2vw 2vw;
+}
+.sender{
+  display: flex;
+  flex-direction: column;
+}
+ .messages i{
+  font-size: 3vw;
+  color: white;
+  margin-right: 1vw;
+ }   
+ .sender h4{
+  color: white;
+  font-size: 1.5vw;
+ }
+ .sender p{
+  color:white;
+  font-size: 1vw;
+  text-align: center;
 
-
-    
+ }
    
     
     
