@@ -20,7 +20,7 @@ let openMenu = () =>{
   document.getElementById('drop').style.display="block"
 }
 let closeMenu = () =>{
-  if(window.innerWidth<=1024){
+  if(window.innerWidth<=800){
   document.getElementById('drop').style.display="none"
   }
 }
