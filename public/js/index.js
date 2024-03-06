@@ -30,5 +30,10 @@ let closeMenu = () =>{
  let closeLogin=()=>{
    document.getElementById('login').style.display="none"
  }
+ let resetProperty  = () => {
+  if(window.innerWidth>800){
+    document.getElementById('drop').style.display="block"
+    }
+ }
  
 
