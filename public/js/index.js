@@ -20,7 +20,9 @@ let openMenu = () =>{
   document.getElementById('drop').style.display="block"
 }
 let closeMenu = () =>{
+  if(window.innerWidth<=1024){
   document.getElementById('drop').style.display="none"
+  }
 }
  let openLogin=()=>{
    document.getElementById('login').style.display="block"
