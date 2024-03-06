@@ -1,7 +1,5 @@
 @media screen and (max-width:1024px) {
-  {
-    ma
-  }
+  
 
     .icon{
         display: block;
@@ -80,14 +78,14 @@
     left: 0;
    }
    .menubar{
-    position: sticky;
+    position: fixed;
     top: 0;
     width:100%;
    }
    body{
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
    }
   .login-page form{
   width: 90%;
