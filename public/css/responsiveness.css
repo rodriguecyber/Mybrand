@@ -58,29 +58,31 @@
   .dropdown{
    position: fixed;
    overflow-x: hidden;
-    width: 100%;
+    width: 20%;
     height: 100%;
     background-color:rgba(7, 10, 64, 1);
     z-index: 1;
-    padding-top:10%;
-    padding-left: 40%;
     display: none;
-    
-   
+    right:0;
+    padding-top: 20px;
   }
   .dropdown *{
     clear: both;
+    margin-bottom:10px ;
+
    }
    .dropdown i{
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    font-size: 5vw;
    }
    .menubar{
     position: fixed;
     top: 0;
     width:100%;
+    /* background-color:rgb(255, 255, 255,0.0); */
    }
    body{
     padding: 0;
@@ -94,6 +96,9 @@
   }
   .login-page  form i{
     font-size: 3vw;
+  }
+  .homepage h1{
+   margin-top: 10vw;
   }
   .homepage p{
     font-size: 3vw;
@@ -136,5 +141,10 @@
     font-size: 3vw;
   }
 
+    }
+    @media screen and (max-width:400px){
+      .menubar{
+        background-color:rgb(255, 255, 255,0.0);
+       }
     }
 

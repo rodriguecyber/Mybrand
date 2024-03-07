@@ -11,14 +11,14 @@
     <script src="/public/js/admin.js"></script>
      <title>Rodrigue</title>
      </head>
-     <body>
+     <body onresize="resetProperty()">
 
      <div class="menubar">
           <div class="brandname">RWIGARA Rodrigue</div>
             <div id="drop" class="dropdown">
-              <a class="home active" onclick="goToHome();closeMenu()">Home</a>
-              <a class="about"   onclick="goToAbout();closeMenu()">About us</a>
-              <a class="skills" onclick="goToSkills() ;closeMenu()">Skills</a>      
+              <a class="home active" onclick="scrollFuction('home');closeMenu()">Home</a>
+              <a class="about"   onclick="scrollFuction('about');closeMenu()">About us</a>
+              <a class="skills" onclick="scrollFuction('skills') ;closeMenu()">Skills</a>      
             <a href="/admin/portfolio.html" >Portfolio</a>
             <a  onclick="showMessage()">Message </a>
             <a href="/admin/blogs.html">Blog</a>
@@ -28,14 +28,14 @@
           <div  class="icon" onclick="openMenu()"><i class="fa fa-bars" ></i></div>
         </div>
 
-     <div class="homepage">
+     <div class="homepage" id="home">
       <h1>Manage your account information.</h1>
        <p> if you are a company or  person and you need  to hire or collaborate with   
         software engeener or Website developer both back-end and front-end contact me</p>
         <input type="submit" value="Edit contact " onclick="goToAbout()">
      </div>
 
-     <div class="aboutpage"> 
+     <div class="aboutpage" id="about"> 
       <h2 class="page-title">About Me</h2>
       <div class="aboutdiv">
 
@@ -56,7 +56,7 @@
       </div>
     </div>
     
-      <div class="skillspage">
+      <div class="skillspage" id="skills">
         <h2 class="page-title">My Skills in different Technologies </h2>
         <div class="skillsdiv">
         

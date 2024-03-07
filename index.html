@@ -9,33 +9,34 @@
    <link rel="stylesheet" href="/public/css/responsiveness.css">
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
+    <script src="/public/js/Validation.js"></script>
      <title>Rodrigue</title>
      </head>
      <body onresize="resetProperty()">
 
-     <div class="menubar">
-          <div class="brandname">RWIGARA Rodrigue</div>
+     <div class="menubar" >
+          <div class="brandname" >RWIGARA Rodrigue</div>
             <div id="drop" class="dropdown">
-              <span class="home active" onclick="goToHome() ;closeMenu()">Home</span>
-              <span class="about"   onclick="goToAbout();closeMenu()">About us</span>
-              <span class="skills" onclick="goToSkills();closeMenu()">Skills</span>      
-            <span class="portfolio" onclick="goToPortifolio();closeMenu()">Portfolio</span>
-            <span class="contact" onclick="goToContact();closeMenu()">Contact </span>
-            <span class="blog" onclick="goToBlog();closeMenu()">Blog</span>
+              <span class="home active" onclick="scrollFuction('home') ;closeMenu()">Home</span>
+              <span class="about"   onclick="scrollFuction('about');closeMenu()">About us</span>
+              <span class="skills" onclick="scrollFuction('skills');closeMenu()">Skills</span>      
+            <span class="portfolio" onclick="scrollFuction('portfolio');closeMenu()">Portfolio</span>
+            <span class="contact" onclick="scrollFuction('contact');closeMenu()">Contact </span>
+            <span class="blog" onclick="scrollFuction('blog');closeMenu()">Blog</span>
             <a href="##" class="login" onclick="openLogin();closeMenu()">Login</a>
             <i  class="fa-regular fa-circle-xmark " onclick="closeMenu()"></i>
           </div>
           <div  class="icon" onclick="openMenu()"><i class="fa fa-bars" ></i></div>
         </div>
 
-     <div class="homepage">
+     <div class="homepage" id="home">
       <h1>Welcome to your software engeenering partener</h1>
        <p> if you are a company or  person and you need  to hire or collaborate with   
         software engeener or Website developer both back-end and front-end contact me</p>
         <input type="submit" value="Contact me... " onclick="goToAbout()">
      </div>
 
-     <div class="aboutpage"> 
+     <div class="aboutpage" id="about"> 
       <h2 class="page-title">About Me</h2>
       <div class="aboutdiv">
 
@@ -56,7 +57,7 @@
       </div>
     </div>
     
-      <div class="skillspage">
+      <div class="skillspage" id="skills">
         <h2 class="page-title">My Skills in different Technologies </h2>
         <div class="skillsdiv">
         
@@ -110,7 +111,7 @@
       </div>
     </div>
 
-    <div class="portfolio-page">
+    <div class="portfolio-page" id="portfolio">
       <h2 class="page-title">My Portfolio</h2>
       <div class="portfolio-div">
       <i class="fa-solid fa-chevron-left slide-left"></i>
@@ -126,15 +127,15 @@
     <i class="fa-solid fa-chevron-right slide-right"></i>
     </div>
   </div>
-    <div class="contactpage">
+    <div class="contactpage" id="contact">
       <h2 class="page-title">Get in touch with us</h2>
-      <form action="#">
+      <form action="#" >
         <label for="name">Full Name</label>
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name"  pattern="[a-zA-Z ' ']+" oninvalid="validateName(this)"  required >
         <label for="email">Email Address</label>
-        <input type="email" placeholder="Email">
+        <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}" oninvalid="validateEmail(this)" required>
         <label for="message">Message</label>
-        <textarea name="message" id="message" placeholder="enter your message"></textarea>
+        <textarea name="message" id="message" placeholder="enter your message"  required></textarea>
        <span class="subscribe">
         <input type="checkbox" value="">
        <p>Subscribe to our Newsletter</p>
@@ -160,7 +161,7 @@
       </span>
        </div>
     </div>
-     <div class="blogs">
+     <div class="blogs" id="blog">
       <h2 class="page-title">Explore Blogs </h2>
       <div class="article-holder">
         <div class="article">
