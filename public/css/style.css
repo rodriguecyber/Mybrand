@@ -419,9 +419,15 @@ resize: vertical;
   overflow-x: hidden;
   
 }
+
 .article img{
   width: 100%;
 }
+.desc{
+  display: flex;
+  flex-direction: column;
+}
+
 .article h3{
   font-size: 2vw;
   color:  rgba(4, 217, 178, 1) ;
@@ -439,11 +445,11 @@ resize: vertical;
  flex-direction: row;
  padding-top: 0.8vw;
  padding-bottom:0.8vw;
-padding-left: 20%;
+padding-left: 2%;
 }
 .icons i{
   color: rgba(4, 217, 178, 0.5);
-  margin-left :1.5vw;
+  margin-left :2vw;
 }
 .icons p{
   font-size: 1.3vw;
@@ -454,6 +460,11 @@ padding-left: 20%;
   color: rgba(4, 217, 178, 1);
   cursor: pointer;
 }
+.icons-holder{
+  display: flex;
+  flex-direction: row;
+}
+
 .footer{
   background-color: rgba(4, 217, 178, 0.8);
   display: flex;
