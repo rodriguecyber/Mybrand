@@ -58,7 +58,7 @@
   .dropdown{
    position: fixed;
    overflow-x: hidden;
-    width: 20%;
+    width: 30%;
     height: 100%;
     background-color:rgba(7, 10, 64, 1);
     z-index: 1;
