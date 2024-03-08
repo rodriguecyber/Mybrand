@@ -192,13 +192,13 @@
     right: 0;
   }
   .message-body-heading .userlogo{
-   font-size: 10vw;
+   font-size: 6vw;
   }
   .message-body-heading p{
-    font-size: 5vw;
+    font-size: 3vw;
   }
   .message-body-heading .downarrow{
-    font-size: 5vw;
+    font-size: 3vw;
   }
   .portfolio-page{
     width: 100%;
