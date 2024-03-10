@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <script src="/public/js/index.js"></script>
     <script src="/public/js/Validation.js"></script>
+    <script src="/public/js/authentication.js"></script>
+    <script src="/public/js/signup.js"></script>
      <title>Rodrigue</title>
      </head>
      <body onresize="resetProperty()">
@@ -129,13 +131,13 @@
   </div>
     <div class="contactpage" id="contact">
       <h2 class="page-title">Get in touch with us</h2>
-      <form action="#" >
-        <label for="name">Full Name</label>
-        <input type="text" placeholder="Name"  pattern="[a-zA-Z ' ']+" oninvalid="validateName(this)"  required >
+      <form action="#" onsubmit="validateForm()">
+        <label for="name">Full Name</label> <p id="namevalid"></p>
+        <input type="text" placeholder="Name" id="name" >
         <label for="email">Email Address</label>
-        <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}" oninvalid="validateEmail(this)" required>
+        <input type="email" id="email" placeholder="Email"  >
         <label for="message">Message</label>
-        <textarea name="message" id="message" placeholder="enter your message"  required></textarea>
+        <textarea name="textMessage" id="message" placeholder="enter your message"  ></textarea>
        <span class="subscribe">
         <input type="checkbox" value="">
        <p>Subscribe to our Newsletter</p>
@@ -172,8 +174,8 @@
           <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
           <div class="icons-holder">
           <span class="icons">
-            <i class="fa-regular fa-thumbs-up"></i>
-            <p>25</p>
+            <i class="fa-regular fa-thumbs-up" onclick="like(this)"></i>
+            <p>0</p>
             </span>
             <span class="icons">
             <i class="fa-regular fa-comment"></i>
@@ -192,12 +194,12 @@
           <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
           <div class="icons-holder">
           <span class="icons">
-            <i class="fa-regular fa-thumbs-up"></i>
-            <p>25</p>
+            <i class="fa-regular fa-thumbs-up" onclick="like(this)"></i>
+            <p>1</p>
             </span>
             <span class="icons">
             <i class="fa-regular fa-comment"></i>
-            <p>25</p>
+            <p>0</p>
             </span>
             <span class="icons">
             <i class="fa-solid fa-share-nodes"></i>
@@ -212,7 +214,7 @@
           <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
           <div class="icons-holder">
           <span class="icons">
-            <i class="fa-regular fa-thumbs-up"></i>
+            <i class="fa-regular fa-thumbs-up"  onclick="like(this)"></i>
             <p>25</p>
             </span>
             <span class="icons">
@@ -243,18 +245,39 @@
      </div>
      <div class="login-page" id="login">
       <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
-      <form action="/admin/Admin.html">
+      <form method="get" action="/public/js/authentication.js">
         <h1>Admin Login</h1>
         <div>
           <i class="fa-regular fa-envelope"></i>
-      <input type="Email" placeholder="Email:" id="email">
+      <input type="Email" placeholder="Email:" id="emaill">
+    </div>
+        <div>
+          <i class="fa-solid fa-lock"></i>
+      <input type="Password" placeholder="Password" id="passwordl">
+    </div>
+    <input type="submit" value="Login" onclick="selectUser()">
+    <p><a href="##Reset-password" onclick="openSignup()">signup</a></p>
+      </form>
+     </div>
+   
+     <div class="login-page" id="signup">
+      <i class="fa-solid fa-x x" onclick="closeSignup()"></i>
+      <form method="post" action="/public/js/signup.js" onsubmit="submitData()">
+        <h1>Sign Up</h1>
+        <div>
+          <i class="fa-regular fa-envelope"></i>
+      <input type="Email" placeholder="Email:" id="emails">
     </div>
         <div>
           <i class="fa-solid fa-lock"></i>
       <input type="Password" placeholder="Password" id="password">
     </div>
-    <input type="submit" value="Login">
-    <p><a href="##Reset-password">Reset password</a></p>
+        <div>
+          <i class="fa-solid fa-lock"></i>
+      <input type="Password" placeholder="Password" id="password1">
+    </div>
+    <input type="submit" value="Signup" >
+    <p><a href="##Reset-password" onclick="openLogin()">Login</a></p>
       </form>
      </div>
 </body>
