@@ -6,7 +6,7 @@ let selectUser=()=>{
 
     if(user.name===username){
         if(user.password===passwordl){
-            window.alert('password  match')
+            window.location.href("admin/admin.html")
         }
         
         else{
