@@ -9,19 +9,14 @@ let selectMessage = () => {
             var originalAddressdiv = templateDiv.querySelector(".sender p");
             originalMessagediv.textContent = message.names;
             originalAddressdiv.textContent = message.address;
+        } else {
+            let messagediv = templateDiv.cloneNode(true);
+            var messaged = messagediv.querySelector(".sender h4");
+            var emailed = messagediv.querySelector(".sender p");
+            messaged.textContent = message.names; 
+            emailed.textContent = message.address; 
+            divContainer.appendChild(messagediv);
         }
-        else 
-       { 
-        let messagediv = templateDiv.cloneNode(true);
-        var messaged = messagediv.querySelector(".sender h4");
-        var emailed= messagediv.querySelector(".sender p");
-        messaged.textContent = message.names; 
-        emailed.textContent = message.address; 
-    }
-
-        
-
-        // Append the cloned messagediv to the container
-        divContainer.appendChild(messagediv);
     });
 }
+
