@@ -11,7 +11,7 @@
     <script src="/public/js/index.js"></script>
     <script src="/public/js/Validation.js"></script>
     <script src="/public/js/authentication.js"></script>
-    <script src="/public/js/signup.js"></script>
+    <script src="/public/js/message.js"></script>
      <title>Rodrigue</title>
      </head>
      <body onresize="resetProperty()">
@@ -131,13 +131,13 @@
   </div>
     <div class="contactpage" id="contact">
       <h2 class="page-title">Get in touch with us</h2>
-      <form action="#" onsubmit="validateForm()">
+      <form action="###" onsubmit="return validateContactForm()">
         <label for="name">Full Name</label> <p id="namevalid"></p>
-        <input type="text" placeholder="Name" id="name" >
+        <input type="text" placeholder="Name" id="name"required >
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Email"  >
+        <input type="email" id="email" placeholder="Email" required >
         <label for="message">Message</label>
-        <textarea name="textMessage" id="message" placeholder="enter your message"  ></textarea>
+        <textarea name="textMessage" id="message" placeholder="enter your message" required ></textarea>
        <span class="subscribe">
         <input type="checkbox" value="">
        <p>Subscribe to our Newsletter</p>
@@ -245,24 +245,24 @@
      </div>
      <div class="login-page" id="login">
       <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
-      <form method="get" action="/public/js/authentication.js">
+      <form  action="/admin/Admin.html" onsubmit="return selectUser()">
         <h1>Admin Login</h1>
         <div>
           <i class="fa-regular fa-envelope"></i>
-      <input type="Email" placeholder="Email:" id="emaill">
+      <input type="Email" placeholder="Email:" id="emaill" required>
     </div>
         <div>
           <i class="fa-solid fa-lock"></i>
-      <input type="Password" placeholder="Password" id="passwordl">
+      <input type="Password" placeholder="Password" id="passwordl" required>
     </div>
-    <input type="submit" value="Login" onclick="selectUser()">
-    <p><a href="##Reset-password" onclick="openSignup()">signup</a></p>
+    <input type="submit" value="Login" >
+    <p><a  onclick="openSignup()">signup</a></p>
       </form>
      </div>
    
      <div class="login-page" id="signup">
       <i class="fa-solid fa-x x" onclick="closeSignup()"></i>
-      <form method="post" action="/public/js/signup.js" onsubmit="submitData()">
+      <form  action="/admin/Admin.html" onsubmit=" return validateSignPage()">
         <h1>Sign Up</h1>
         <div>
           <i class="fa-regular fa-envelope"></i>
@@ -277,7 +277,7 @@
       <input type="Password" placeholder="Password" id="password1">
     </div>
     <input type="submit" value="Signup" >
-    <p><a href="##Reset-password" onclick="openLogin()">Login</a></p>
+    <p><a onclick="openLogin()">Login</a></p>
       </form>
      </div>
 </body>

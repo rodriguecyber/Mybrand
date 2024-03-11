@@ -1,29 +1,46 @@
-let validateForm=()=> {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var textMessage = document.getElementById("message").value;
-
-    if (name.trim() == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-
-    if (email.trim() == "") {
-        alert("Email must be filled out");
-        return false;
-    } else if (!validateEmail(email)) {
-        alert("Invalid email format");
-        return false;
-    }
-    if (textMessage.trim() == "") {
-        alert("Password must be filled out");
-        return false;
-    }
-
-    return false; 
+let addUser=(email,password)=>{
+    var users=JSON.parse(localStorage.getItem('users'))||[]
+    users.push({'name':email,'password':password})
+    localStorage.setItem('users',JSON.stringify(users))
 }
 
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+let submitData=()=>{
+    let email=document.getElementById("emails").value
+    let password=document.getElementById("password").value
+    let password1=document.getElementById("password1").value
+     if(password!=password1){
+        window.alert("password not match")
+        return false
+       
+     }
+     else{
+      addUser(email,password)
+      window.alert("you are registered")
+      return true
+       }
+}
+
+
+// .....................................................................................................
+
+
+
+
+
+let  validateSignPage=()=>{
+    var email = document.getElementById('emails').value;
+    var password = document.getElementById('password').value;
+    
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        window.alert('Please enter a valid email address.');
+        return false; 
+    }
+    if (password.length < 5 || !/\d/.test(password)) {
+       window.alert('Password must have at least 5 characters and contain at least one number.');
+        return false;
+
+    }
+    return submitData()
+    return true
 }
