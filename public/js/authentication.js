@@ -25,12 +25,12 @@ let selectUser=()=>{
    
   }); 
   if(getuser ===true && getpassword===true) {
-    document.getElementById('passwordl').style.borderColor='r'
-    document.getElementById('passwordl').style.borderColor='red'
+    document.getElementById('passwordl').style.borderColor=''
+    document.getElementById('passwordl').style.borderColor=''
   return true
   }
   else if(getuser===true && getpassword===false){
-    document.getElementById('passwordl').style.borderColor='red'
+   document.getElementById('loginpassword').style.border='1px solid red'
     return false
   }
   else{
