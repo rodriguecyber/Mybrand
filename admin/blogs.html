@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <link rel="stylesheet" href="/public/css/blogs.css">
     <link rel="stylesheet" href="/public/css/responsiveness.css">
+    <script src="/public/js/blogs.js"></script>
     <title>Rodrigue</title>
 </head>
 <body>
@@ -77,11 +78,18 @@
     
   
  </div>
-        <div class="add-article">
+        <div class="add-article"  onclick="openAddBlog()">
             <i class="fa-regular fa-square-plus"></i>
             <h5>New Article</h5>
         </div>
        </div>
-    
+    <div class="addblog" id="addblog">
+      <input type="file" id="blogimage">
+       <label for="heading">Enter Title for article</label>
+      <input type="text" id="heading">
+      <label for="heading">Enter Description for article</label>
+      <textarea name="paragraph" id="paragraph" cols="20" rows="5"></textarea>
+      <input type="submit" value="Add Blog" id="submitblog" onclick="addBlog()">
+    </div>
 </body>
 </html>

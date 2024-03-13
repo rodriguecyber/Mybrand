@@ -99,6 +99,21 @@ padding-left: 2%;
     text-align: center;
     margin-top: 12px;
  }
+ .addblog{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin:  auto;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  background-color: rgba(4, 217, 178, 1);
+  visibility: hidden;
+ }
+ .addblog *{
+  margin:5px  auto ;
+  
+ }
  @media screen and (max-width:800px) {
   .blogs{
     height:100%;

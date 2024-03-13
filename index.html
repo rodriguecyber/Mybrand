@@ -12,9 +12,11 @@
     <script src="/public/js/Validation.js"></script>
     <script src="/public/js/authentication.js"></script>
     <script src="/public/js/message.js"></script>
+    <script src="/public/js/comment.js"></script>
+    <script src="/public/js/blogs.js"></script>
      <title>Rodrigue</title>
      </head>
-     <body onresize="resetProperty()">
+     <body onresize="resetProperty()" onload="displayBlogs()" >
 
      <div class="menubar" >
           <div class="brandname" >RWIGARA Rodrigue</div>
@@ -132,9 +134,11 @@
     <div class="contactpage" id="contact">
       <h2 class="page-title">Get in touch with us</h2>
       <form action="###" onsubmit="return validateContactForm()">
-        <label for="name">Full Name</label> <p id="namevalid"></p>
+      <label for="name">Full Name</label> <p id="namevalid"></p>
+      <p id="errorname" class="error"></p>
         <input type="text" placeholder="Name" id="name"required >
         <label for="email">Email Address</label>
+        <p id="erroremail" class="error"></p>
         <input type="email" id="email" placeholder="Email" required >
         <label for="message">Message</label>
         <textarea name="textMessage" id="message" placeholder="enter your message" required ></textarea>
@@ -165,68 +169,33 @@
     </div>
      <div class="blogs" id="blog">
       <h2 class="page-title">Explore Blogs </h2>
-      <div class="article-holder">
+      <div class="article-holder" id="article-holder">
           
-        <div class="article">
+         <div class="article" id="article" >
+          <div class="image" >
           <img src="/images/server.jpg" alt="">
+        </div>
           <div class="desc">
           <h3>Andela ATLP</h3>
-          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
-          <div class="icons-holder">
-          <span class="icons">
-            <i class="fa-regular fa-thumbs-up" onclick="like(this)"></i>
-            <p>0</p>
-            </span>
-            <span class="icons">
-            <i class="fa-regular fa-comment"></i>
-            <p>25</p>
-            </span>
-            <span class="icons">
-            <i class="fa-solid fa-share-nodes"></i>
-          </span>
-        </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="/images/server.jpg" alt="">
-          <div class="desc">
-          <h3>Andela ATLP</h3>
-          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
-          <div class="icons-holder">
-          <span class="icons">
-            <i class="fa-regular fa-thumbs-up" onclick="like(this)"></i>
-            <p>1</p>
-            </span>
-            <span class="icons">
-            <i class="fa-regular fa-comment"></i>
-            <p>0</p>
-            </span>
-            <span class="icons">
-            <i class="fa-solid fa-share-nodes"></i>
-          </span>
-        </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="/images/server.jpg" alt="">
-          <div class="desc">
-          <h3>Andela ATLP</h3>
-          <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
+          <p>get skills for software development get skills for software developmentget skills for software developmentget skills for software development </p>
+            <h5 class="readmore" onclick="copyData(this)">Read more</h5>
+         
           <div class="icons-holder">
           <span class="icons">
             <i class="fa-regular fa-thumbs-up"  onclick="like(this)"></i>
             <p>25</p>
             </span>
-            <span class="icons">
-            <i class="fa-regular fa-comment"></i>
+            <span class="icons" id="blogaction">
+            <i class="fa-regular fa-comment" id="hello"  onclick="copyData(this)"></i>
             <p>25</p>
             </span>
             <span class="icons">
-            <i class="fa-solid fa-share-nodes"></i>
+            <i class="fa-solid fa-share-nodes" ></i>
           </span>
         </div>
           </div>
         </div>
+         
         
       </div>
      </div>
@@ -247,13 +216,13 @@
       <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
       <form  action="/admin/Admin.html" onsubmit="return selectUser()">
         <h1>Admin Login</h1>
-        <div>
+        <div id="loginemail">
           <i class="fa-regular fa-envelope"></i>
       <input type="Email" placeholder="Email:" id="emaill" required>
     </div>
-        <div>
+        <div id="loginpassword">
           <i class="fa-solid fa-lock"></i>
-      <input type="Password" placeholder="Password" id="passwordl" required>
+      <input type="Password" placeholder="Password" id="passwordl" >
     </div>
     <input type="submit" value="Login" >
     <p><a  onclick="openSignup()">signup</a></p>
@@ -280,5 +249,17 @@
     <p><a onclick="openLogin()">Login</a></p>
       </form>
      </div>
+     <div class="blogcomment" id="blogcomment" onblur="hide()">
+      <div class="img" id="img">
+        
+      </div>
+      <div class="description" id="description">
+        
+      <div class="comment">
+        <input type="text" id="commentid" placeholder="Comment">
+        <button onclick="addComment(this)">send</button>
+      </div>
+      </div>
+      </div>
 </body>
 </html>

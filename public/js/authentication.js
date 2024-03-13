@@ -25,15 +25,17 @@ let selectUser=()=>{
    
   }); 
   if(getuser ===true && getpassword===true) {
-    window.alert("Login Succesfully")
+    document.getElementById('passwordl').style.borderColor='r'
+    document.getElementById('passwordl').style.borderColor='red'
   return true
   }
   else if(getuser===true && getpassword===false){
-    window.alert("Wrong Password");
+    document.getElementById('passwordl').style.borderColor='red'
     return false
   }
   else{
-   window.alert("User does not exist");
+    document.getElementById('loginemail').style.border='1px solid red'
+
    return false
   }
 }
