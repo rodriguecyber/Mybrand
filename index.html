@@ -168,10 +168,23 @@
        </div>
     </div>
      <div class="blogs" id="blog">
+      
       <h2 class="page-title">Explore Blogs </h2>
       <div class="article-holder" id="article-holder">
           
          <div class="article" id="article" >
+          <div class="blogcomment" id="blogcomment" onblur="hide()">
+            <div class="img" id="img">
+              
+            </div>
+            <div class="description" id="description">
+              
+            <div class="comment">
+              <input type="text" id="commentid" placeholder="Comment">
+              <button onclick="addComment(this)">send</button>
+            </div>
+            </div>
+            </div>
           <div class="image" >
           <img src="/images/server.jpg" alt="">
         </div>
@@ -229,17 +242,6 @@
       </form>
      </div>
    
-          <div class="blogcomment" id="blogcomment" onblur="hide()">
-      <div class="img" id="img">
-        
-      </div>
-      <div class="description" id="description">
-        
-      <div class="comment">
-        <input type="text" id="commentid" placeholder="Comment">
-        <button onclick="addComment(this)">send</button>
-      </div>
-      </div>
-      </div>
+          
 </body>
 </html>

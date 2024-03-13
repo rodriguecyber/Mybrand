@@ -1,6 +1,6 @@
 let copyData=(element)=>{
     let parent=element.parentNode.parentNode
-    let imgSource=parent.firstElementChild.firstElementChild
+    let imgSource=parent.firstElementChild.nextElementSibling.firstElementChild
     let newImg=document.createElement('img')
     newImg.src=imgSource.src
     headingsource=element.parentNode.firstElementChild

@@ -8,14 +8,17 @@ let openAddBlog=()=>{
             var heading = document.getElementById("heading").value;
             var paragraph = document.getElementById("paragraph").value;
             var blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-    
+            let newId=blogs.length+1
             var reader = new FileReader();
+           
             reader.onload = function (event) {
                 var imageDataUrl = event.target.result;
                 var newBlog = {
+                    Id:newId,
                     image: imageDataUrl, 
                     title: heading,
                     description: paragraph
+
                 };
                 blogs.push(newBlog);
     
@@ -24,7 +27,7 @@ let openAddBlog=()=>{
                 document.getElementById("heading").value = "";
                 document.getElementById("paragraph").value = "";
     
-                alert("Blog added successfully!");
+                alert(newId);
             };
     
            
@@ -40,15 +43,18 @@ let displayBlogs=()=> {
     let blogs = JSON.parse(localStorage.getItem("blogs")) || [];    
   let blogLength=blogs.length
         blogs.forEach(function(blog, index) {
-        commentid=index
-            if(index>=blogLength-3){
+            
+                if(index>=blogLength-3){
+
                 if(index==blogLength-1){
                     let orginalImage= templateDiv.querySelector(".image img")
                     let originalTitle=templateDiv.querySelector(".desc h3")
                     let originalDescription=templateDiv.querySelector(".desc p")
                     orginalImage.src=blog.image
-                    originalTitle.textContent=blog.title    
+                    originalTitle.textContent=blog.Id   
                     originalDescription.textContent=blog.description
+                    templateDiv.id=blog.Id
+                    
                     
                                 
                     }
@@ -58,29 +64,23 @@ let displayBlogs=()=> {
                         let clonedTitle = cloneDiv.querySelector(".desc h3");
                         let cloneDescription= cloneDiv.querySelector(".desc p");
                         clonedImage.src=  blog.image
-                        clonedTitle.textContent = blog.title; 
+                        clonedTitle.textContent = blog.Id; 
                         cloneDescription.textContent = blog.description; 
                         divContainer.appendChild(cloneDiv);
-                    }
+                         cloneDiv.id=blog.Id
+                    } 
             }
         
-            
+           
       });
    
   }
-  
-  
-
-  
-
-
-
-
-
 
 
 let addComment=(blog) =>{
-   let blogIndex=blog.perentNode.parentNode.parentNode.parentNode.id
+    let blogIndex=blog.parentNode.parentNode.parentNode.parentNode.className
+   alert(blogIndex)
+    }
     commentContent=document.getElementById('commentid').value
     let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
     if (blogIndex >= 0 && blogIndex < blogs.length) {
@@ -97,4 +97,4 @@ let addComment=(blog) =>{
         localStorage.setItem("blogs", JSON.stringify(blogs));
          alert('comment added')
         displayBlogs();
-    }}
+    }
