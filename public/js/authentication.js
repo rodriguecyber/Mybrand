@@ -1,3 +1,7 @@
+let changestyle=(Element)=>{
+  Element.style.visibility='visible'
+}
+
 let selectUser=()=>{
     username=document.getElementById('emaill').value
     passwordl=document.getElementById('passwordl').value
@@ -30,13 +34,22 @@ let selectUser=()=>{
   return true
   }
   else if(getuser===true && getpassword===false){
-   document.getElementById('loginpassword').style.border='1px solid red'
-   document.getElementById('passwordvalid').style.visibility="visible"
+    document.getElementById('passwordvalid').style.visibility = "visible";
+    setTimeout(function() {     
+    
+      document.getElementById('passwordvalid').style.visibility = "hidden";
+  }, 2000);
     return false
   }
   else{
-    document.getElementById('loginemail').style.border='1px solid red'
-    document.getElementById('emailvalid').style.visibility="visible"
+    
+    document.getElementById('emailvalid').style.visibility = "visible";
+
+
+setTimeout(function() {
+    
+    document.getElementById('emailvalid').style.visibility = "hidden";
+}, 2000);
 
    return false
   }
