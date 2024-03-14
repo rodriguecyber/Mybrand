@@ -517,7 +517,7 @@ padding-left: 2%;
 }
 
 .login-page{
-  background-color: rgba(45, 75, 166, 0.8);
+  background-color: rgba(45, 75, 166);
   position: fixed;
   z-index: 1;
    width: 100%;
@@ -542,18 +542,22 @@ padding-left: 2%;
   }
   .login-page form{
     position: absolute;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     width: 30%;
     /* height: 50%; */
     left:35%;
     top: 25%;
     padding: 1vw;
     padding-top: 12px;
+    border-radius: 5px;
+    height: 50%;
+    margin: auto;
+    border:  3px solid rgb(41, 0, 108);
     border-radius: 20px;
   }
   .login-page form h1{
     text-align: center;
-    color: rgb(41, 0, 108);
+    color: rgb(227, 220, 220) 
   }
   .login-page form div i{
     position: relative;
@@ -565,9 +569,13 @@ padding-left: 2%;
     height: 30px;
     outline: none;
 }
+#passwordvalid, #emailvalid{
+  color: rgb(234, 51, 51);
+  visibility: hidden;
+}
 .login-page div{
   background-color: rgb(128, 219, 219);
-  margin: 15px 5vw;
+  margin: 0px 5vw 15px 5vw;
   padding:10px 1.5vw;
   border-radius: 10px;
   display: flex;
@@ -591,7 +599,7 @@ padding-left: 2%;
  
 }
 .login-page form input[type=submit]:hover{
-  background-color: rgba(45, 75, 166, 0.9);
+  background-color: rgba(4, 217, 178, 0.5);
 }
 .login-page form p{
 text-align: center;
@@ -694,7 +702,11 @@ flex-direction: row;
     overflow: auto;
   }
 
-
+.article .comments{
+ display: none;
+overflow-y: hidden;
+  max-height: 40%;
+}
    .blogcomment .comment{
    visibility: hidden;
    position: absolute;

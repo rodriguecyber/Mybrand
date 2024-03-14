@@ -31,10 +31,12 @@ let selectUser=()=>{
   }
   else if(getuser===true && getpassword===false){
    document.getElementById('loginpassword').style.border='1px solid red'
+   document.getElementById('passwordvalid').style.visibility="visible"
     return false
   }
   else{
     document.getElementById('loginemail').style.border='1px solid red'
+    document.getElementById('emailvalid').style.visibility="visible"
 
    return false
   }

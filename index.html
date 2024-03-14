@@ -191,7 +191,10 @@
           <div class="desc">
           <h3>Andela ATLP</h3>
           <p>get skills for software development get skills for software developmentget skills for software developmentget skills for software development </p>
-            <h5 class="readmore" onclick="copyData(this)">Read more</h5>
+            <div class="comments">
+
+            </div>
+          <h5 class="readmore" onclick="copyData(this)">Read more</h5>
          
           <div class="icons-holder">
           <span class="icons">
@@ -199,7 +202,7 @@
             <p>25</p>
             </span>
             <span class="icons" id="blogaction">
-            <i class="fa-regular fa-comment" id="hello"  onclick="copyData(this)"></i>
+            <i class="fa-regular fa-comment" id="hello" ></i>
             <p>25</p>
             </span>
             <span class="icons">
@@ -229,10 +232,12 @@
       <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
       <form  action="/admin/Admin.html" onsubmit="return selectUser()">
         <h1>Admin Login</h1>
+        <p id="emailvalid">&#9888;User not Found</p>
         <div id="loginemail">
           <i class="fa-regular fa-envelope"></i>
       <input type="Email" placeholder="Email:" id="emaill" required>
     </div>
+    <p id="passwordvalid">&#9888;password not match</p>
         <div id="loginpassword">
           <i class="fa-solid fa-lock"></i>
       <input type="Password" placeholder="Password" id="passwordl" >

@@ -1,41 +1,3 @@
-let openAddBlog=()=>{
-    document.getElementById('addblog').style.visibility='visible'
-    }
-
-    let addBlog = () => {
-        document.getElementById("submitblog").addEventListener("click", function () {
-            var blogImage = document.getElementById("blogimage").files[0];
-            var heading = document.getElementById("heading").value;
-            var paragraph = document.getElementById("paragraph").value;
-            var blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-            let newId=blogs.length+1
-            var reader = new FileReader();
-           
-            reader.onload = function (event) {
-                var imageDataUrl = event.target.result;
-                var newBlog = {
-                    Id:newId,
-                    image: imageDataUrl, 
-                    title: heading,
-                    description: paragraph
-
-                };
-                blogs.push(newBlog);
-    
-               localStorage.setItem("blogs", JSON.stringify(blogs));                
-                document.getElementById("blogimage").value = "";
-                document.getElementById("heading").value = "";
-                document.getElementById("paragraph").value = "";
-    
-                alert(newId);
-            };
-    
-           
-            reader.readAsDataURL(blogImage);
-        });
-    };
-    
-
 let displayBlogs=()=> {
     
     let divContainer = document.getElementById('article-holder');
@@ -47,7 +9,7 @@ let displayBlogs=()=> {
         blogs.forEach(function(blog, index) {
               templateDiv.id=blog.Id
               let cloneDiv = templateDiv.cloneNode(true);
-              cloneDiv.id=blog.id
+              cloneDiv.id=blog.id+"-"+index
                 if(index>=blogLength-3){
 
                 if(index==blogLength-1){
@@ -92,18 +54,4 @@ let displayBlogs=()=> {
       });
    
   }
-
-
-  function addComment(element) {
-    // Get the parent elements to extract blog information
-    let articleDiv = element.closest('.article');
-    let commentInput = articleDiv.querySelector('.comment input[type="text"]');
-    let blogId = articleDiv.id;
-
-    // Retrieve the comment content
-   alert(blogId)
-}
-
-
-
-
+  
