@@ -27,7 +27,7 @@ let openAddBlog=()=>{
                 document.getElementById("heading").value = "";
                 document.getElementById("paragraph").value = "";
     
-                alert(newId);
+                alert('blog inserted succesfully');
             };
     
            
