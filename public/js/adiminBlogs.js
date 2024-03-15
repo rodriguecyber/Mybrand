@@ -10,16 +10,18 @@ function displayBlogs() {
           const blogElement = document.createElement('div');
           blogElement.classList.add('blog');
           blogElement.innerHTML = `
-              <h2>${blog.title}</h2>
+          <span class="delete" id='${blog.title}' onclick="deleted(this)">Delete</span>
+              <h2>${blog.title}</h2>            
               <div class="image">
               <img class="blog-image" src="${blog.image}" alt="Blog Image">
               </div>
               <p>${blog.content}</p>
               <button class="like-btn" data-id="${blog.id}">Like</button>
               <textarea class="comment-input" placeholder="Add a comment"></textarea>
-              <button class="comment-btn" data-id="${blog.id}">Add Comment</button>
+              <button class="comment-btn" data-id="${blog.id}">Comment</button>
               <div class="comments" data-id="${blog.id}"></div>
               <div class="likes-count">Likes: <span>${blog.likes}</span></div>
+             
           `;
           blogsContainer.appendChild(blogElement);
 
@@ -118,3 +120,18 @@ function addNewBlog() {
     reader.readAsDataURL(imageFile);
 }
 
+let deleted=(blog)=>{
+    const blogs = JSON.parse(localStorage.getItem('blogs'))
+    
+    blogs.forEach((b, index) => {
+        if (b.title === blog.id) {
+            blogs.splice(index, 1);
+        }
+    });
+    localStorage.setItem('blogs', JSON.stringify(blogs));
+displayBlogs()
+   
+
+     
+
+}

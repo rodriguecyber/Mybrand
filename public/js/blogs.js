@@ -17,7 +17,7 @@
                 <p>${blog.content}</p>
                 <button class="like-btn" data-id="${blog.id}">Like</button>
                 <textarea class="comment-input" placeholder="Add a comment"></textarea>
-                <button class="comment-btn" data-id="${blog.id}">Add Comment</button>
+                <button class="comment-btn" data-id="${blog.id}">Comment</button>
                 <div class="comments" data-id="${blog.id}"></div>
                 <div class="likes-count">Likes: <span>${blog.likes}</span></div>
             `;

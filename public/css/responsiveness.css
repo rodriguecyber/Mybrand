@@ -345,9 +345,11 @@ a:hover {
   .article-holder h2 {
     font-size: 1.5em;
     margin-top: 0;
+    max-height: 8vw;
+  
   }
   
-  p {
+  .article-holder p {
     margin-bottom: 10px;
     height: 5vw;
     overflow-y: hidden;

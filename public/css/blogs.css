@@ -56,6 +56,7 @@
   font-size: 2vw;
   color:  rgba(4, 217, 178, 1) ;
   margin: 1.2vw;
+ 
 
 }
 .article p{
@@ -115,17 +116,41 @@ padding-left: 2%;
 
   
  }
+ .delete{
+  margin: auto;
+  color:red;
+  background-color: rgba(4, 217, 178, 0.6);
+  text-align: right;
+  right: 0;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+  
+ }
+ .delete:hover{
+  margin: auto;
+  color:rgb(224, 68, 68);
+  background-color: rgba(4, 217, 178, 0.2);
+  text-align: right;
+  right: 0;
+  padding: 2px;
+  border-radius: 3px;
+  
+  }
 
  /* .......................................................... */
 
 
- .container {
- width: 50%;
-  margin: 0 auto;
+.container {
+  
+ width: 20%;
+  margin: auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+ 
 }
 
 .container header {
@@ -227,7 +252,7 @@ input[type="file"] {
 .article-holder h2 {
   font-size: 1.5em;
   margin-top: 0;
-  width: 100%;
+  max-height: 4vw;
   overflow: hidden;
 }
 
@@ -268,7 +293,7 @@ input[type="file"] {
 
 .comments {
   margin-top: 10px;
-  height: 20px;
+  height: 70px;
   overflow-y: auto;
 }
 .image{
@@ -287,14 +312,8 @@ input[type="file"] {
     overflow: hidden;
      margin: 0;
   }
-  body{
-    background-color:rgba(7, 10, 64, 1);
-   
-  }
-  a{
-    font-size: 4vw;
-    margin-top: 3vw;
-  }
+  
+  
   .container {
     width: 70%;
 

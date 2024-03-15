@@ -317,10 +317,8 @@ font-size: 2.6vw;
   width: 50%;
   background-color: rgba(4, 217, 178, 0.1);
   color: rgba(4, 217, 178, 1);
-  margin-bottom: 20px;
-  margin-left: 20%;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  margin: auto;
+
 }
 .contactpage form textarea, .contactpage input[type=text],.contactpage input[type=email], .contactpage input[type=submit]{
   width: 100%; 
@@ -627,12 +625,14 @@ flex-direction: row;
 .article-holder h2 {
   font-size: 1.5em;
   margin-top: 0;
-  
+  max-height: 4vw;
+  overflow: hidden;
+  color: #0056b3;
 }
 
 .article-holder p {
   margin-bottom: 10px;
-  height: 5vw;
+  max-height: 5vw;
   overflow-y: hidden;
 }
 
@@ -667,7 +667,7 @@ flex-direction: row;
 
 .comments {
   margin-top: 10px;
-  height: 20px;
+  height: 70px;
   overflow-y: auto;
 }
 .image{
