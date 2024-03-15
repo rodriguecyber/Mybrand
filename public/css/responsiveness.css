@@ -5,26 +5,12 @@
         display: block;
         
     }
-    .article-holder{
-       
-        flex-direction: column;
-        width:  90%;;
-        margin-left: 5%;
-    }
-  .article{
-    margin: 2vw;
-    display: flex;
-    flex-direction: row;
-    overflow-y: hidden;
     
-}
+
 .page-title{
   font-size: 5vw;
 }
-  .article img{
-    width:40%;
-    
-  }
+  
   .desc{
     display: flex;
     flex-direction: column;
@@ -38,14 +24,7 @@
     padding-right: 3vw;
     padding-bottom: 0;
   }
-  .article p{
-  font-size: 5vw;
-  height: 50px;
-  overflow: hidden;
-  }
-  .article h3{
-    font-size: 4vw;
-  }
+  
   
   .aboutdiv{
     flex-direction: column;
@@ -265,8 +244,176 @@
     font-size: 4vw;
     
   }
+  .article-holder {
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+}
+
+.article-holder .blog {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  
+  
+}
+
+.article-holder h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 10px;
+  height: 5vw;
+  overflow-y: hidden;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.like-btn, .comment-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.like-btn:hover, .comment-btn:hover {
+  background-color: #0056b3;
+}
+
+.comment-input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.comments {
+  margin-top: 10px;
+  height: 20px;
+  overflow-y: auto;
+}
+.image{
+  height: 150px;
+  overflow-y: hidden;
+}
+.comments p {
+  margin-bottom: 5px;
+ 
+}
+
+/* a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+} */
+    
+    
+    
+  /* ......................................................   */
+  .article-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+  }
+  
+  .article-holder .blog {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    
+  }
+  
+  .article-holder h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+  
+  p {
+    margin-bottom: 10px;
+    height: 5vw;
+    overflow-y: hidden;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .like-btn, .comment-btn {
+    background-color: rgba(7, 10, 64, 1);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .like-btn:hover, .comment-btn:hover {
+    background-color: rgba(7, 10, 64, 0.9);
+  }
+  
+  .comment-input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .comments {
+    margin-top: 10px;
+    height: 20px;
+    overflow-y: auto;
+  }
+  .image{
+    height: 150px;
+    overflow-y: hidden;
+  }
+  .comments p {
+    margin-bottom: 5px;
    
-    }
+  }
+  /* a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  } */
+      
+
+      
+      
+}
+  
+  
+
+   
+
+
    
     @media screen and (max-width:400px){
       .menubar{

@@ -1,109 +1,84 @@
-let openAddBlog=()=>{
-    document.getElementById('addblog').style.visibility='visible'
+ function displayBlogs() {
+    const blogsContainer = document.getElementById('blogs-container');
+
+   
+    function renderBlogs() {
+        blogsContainer.innerHTML = '';
+        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        blogs.forEach((blog, index)  => {
+           if(index>=blogs.length-3){
+            const blogElement = document.createElement('div');
+            blogElement.classList.add('blog');
+            blogElement.innerHTML = `
+                <h2>${blog.title}</h2>
+                <div class="image">
+                <img class="blog-image" src="${blog.image}" alt="Blog Image">
+                </div>
+                <p>${blog.content}</p>
+                <button class="like-btn" data-id="${blog.id}">Like</button>
+                <textarea class="comment-input" placeholder="Add a comment"></textarea>
+                <button class="comment-btn" data-id="${blog.id}">Add Comment</button>
+                <div class="comments" data-id="${blog.id}"></div>
+                <div class="likes-count">Likes: <span>${blog.likes}</span></div>
+            `;
+            blogsContainer.appendChild(blogElement);
+
+            const likeBtn = blogElement.querySelector('.like-btn');
+            likeBtn.addEventListener('click', handleLike);
+
+            const commentBtn = blogElement.querySelector('.comment-btn');
+            commentBtn.addEventListener('click', handleComment);
+
+            
+            const savedComments = JSON.parse(localStorage.getItem(`blog_${blog.id}_comments`));
+            const commentsContainer = blogElement.querySelector('.comments');
+            if (savedComments) {
+                savedComments.forEach(comment => {
+                    const commentElement = document.createElement('p');
+                    commentElement.textContent = comment;
+                    commentsContainer.appendChild(commentElement);
+                });
+            }
+           }
+        });
     }
 
-    let addBlog = () => {
-        document.getElementById("submitblog").addEventListener("click", function () {
-            var blogImage = document.getElementById("blogimage").files[0];
-            var heading = document.getElementById("heading").value;
-            var paragraph = document.getElementById("paragraph").value;
-            var blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-            let newId=blogs.length+1
-            var reader = new FileReader();
-           
-            reader.onload = function (event) {
-                var imageDataUrl = event.target.result;
-                var newBlog = {
-                    Id:newId,
-                    image: imageDataUrl, 
-                    title: heading,
-                    description: paragraph
-
-                };
-                blogs.push(newBlog);
-    
-               localStorage.setItem("blogs", JSON.stringify(blogs));                
-                document.getElementById("blogimage").value = "";
-                document.getElementById("heading").value = "";
-                document.getElementById("paragraph").value = "";
-    
-                alert('blog inserted succesfully');
-            };
-    
-           
-            reader.readAsDataURL(blogImage);
-        });
-    };
-    
-
-let displayBlogs=()=> {
-    
-    let divContainer = document.getElementById('article-holder');
-    let templateDiv = divContainer.querySelector('.article')
    
-    let blogaction=document.getElementById('blogaction')
-    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];    
-  let blogLength=blogs.length
-        blogs.forEach(function(blog, index) {
-              templateDiv.id=blog.Id
-              let cloneDiv = templateDiv.cloneNode(true);
-              cloneDiv.id=blog.id
-                if(index>=blogLength-3){
+    function handleLike(event) {
+        const blogId = event.target.getAttribute('data-id');
+        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        const blogIndex = blogs.findIndex(blog => blog.id == blogId);
+        if (blogIndex !== -1) {
+            blogs[blogIndex].likes = (blogs[blogIndex].likes || 0) + 1;
+            localStorage.setItem('blogs', JSON.stringify(blogs));
+            renderBlogs();
+        }
+    }
 
-                if(index==blogLength-1){
-                    let orginalImage= templateDiv.querySelector(".image img")
-                    let originalTitle=templateDiv.querySelector(".desc h3")
-                    let originalDescription=templateDiv.querySelector(".desc p")
-                    let orginalComment=templateDiv.querySelector(".comments")
-                    orginalImage.src=blog.image
-                    originalTitle.textContent=blog.title   
-                    originalDescription.textContent=blog.description     
-                   for(i=0; i<blogs[index].comments.length;i++){
-                      newComment=document.createElement('p')
-                     newComment.textContent=blogs[index].comments[i].content
-                     orginalComment.appendChild(newComment)
-                    
-                   }           
-                    
-                                
-                }
-                    else{
-                      
-                        let clonedImage = cloneDiv.querySelector(".image img");
-                        let clonedTitle = cloneDiv.querySelector(".desc h3");
-                        let cloneDescription= cloneDiv.querySelector(".desc p");
-                        clonedImage.src=  blog.image
-                        clonedTitle.textContent = blog.title; 
-                        cloneDescription.textContent = blog.description; 
-                        divContainer.appendChild(cloneDiv);                       
-                         let copiedComment=templateDiv.querySelector(".comments")
-                         for(i=0; i<blogs[index].comments.length;i++){
-                            newComment=document.createElement('p')
-                           newComment.textContent=blogs[index].comments[i].content
-                           copiedComment.appendChild(newComment)
-                          
-                         }
-                         
-                         
-                    } 
-            }
-        
-           
-      });
    
-  }
+    function handleComment(event) {
+        const blogId = event.target.getAttribute('data-id');
+        const commentInput = event.target.parentElement.querySelector('.comment-input');
+        const commentText = commentInput.value.trim();
+        if (commentText !== '') {
+            const commentsContainer = event.target.parentElement.querySelector('.comments');
+            const commentElement = document.createElement('p');
+            commentElement.textContent = commentText;
+            commentsContainer.appendChild(commentElement);
+            saveComment(blogId, commentText);
+            commentInput.value = '';
+        } else {
+            alert('Please enter a valid comment.');
+        }
+    }
 
+    
+    function saveComment(blogId, comment) {
+        const savedComments = JSON.parse(localStorage.getItem(`blog_${blogId}_comments`)) || [];
+        savedComments.push(comment);
+        localStorage.setItem(`blog_${blogId}_comments`, JSON.stringify(savedComments));
+    }
 
-  function addComment(element) {
-    // Get the parent elements to extract blog information
-    let articleDiv = element.closest('.article');
-    let commentInput = articleDiv.querySelector('.comment input[type="text"]');
-    let blogId = articleDiv.id;
-
-    // Retrieve the comment content
-   alert(blogId)
+   
+    renderBlogs();
 }
-
-
-
-

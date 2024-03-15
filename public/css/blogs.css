@@ -112,8 +112,175 @@ padding-left: 2%;
  }
  .addblog *{
   margin:5px  auto ;
+
   
  }
+
+ /* .......................................................... */
+
+
+ .container {
+ width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+
+
+
+
+.container section {
+  margin-bottom: 40px;
+}
+
+.container h2 {
+  margin-top: 0;
+}
+
+.container form {
+  margin-bottom: 20px;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container input[type="text"],
+.container textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.container button[type="submit"] {
+  background-color:rgba(7, 10, 64, 1);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.container #blogs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.container .blog-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.container .blog-item h3 {
+  margin-top: 0;
+}
+
+.container .blog-item img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.article-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+}
+
+.article-holder .blog {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: 20vw;
+  
+}
+
+.article-holder h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.article-holder p {
+  margin-bottom: 10px;
+  height: 5vw;
+  overflow-y: hidden;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.like-btn, .comment-btn {
+  background-color: rgba(7, 10, 64, 1);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.like-btn:hover, .comment-btn:hover {
+  background-color:rgba(45, 75, 166, 0.65)
+}
+
+.comment-input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.comments {
+  margin-top: 10px;
+  height: 20px;
+  overflow-y: auto;
+}
+.image{
+  height: 150px;
+  overflow-y: hidden;
+}
+.comments p {
+  margin-bottom: 5px;
+ 
+}
+
+
  @media screen and (max-width:800px) {
   .blogs{
     height:100%;
@@ -128,4 +295,95 @@ padding-left: 2%;
     font-size: 4vw;
     margin-top: 3vw;
   }
+  .container {
+    width: 70%;
+
+    
+     margin: 0 auto;
+     padding: 20px;
+     background-color: #fff;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   .container header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 20px;
+   }
+   
+   .container h1 {
+     margin: 0;
+   }
+   
+   
+   
+   
+   
+   .container section {
+     margin-bottom: 40px;
+   }
+   
+   .container h2 {
+     margin-top: 0;
+   }
+   
+   .container form {
+     margin-bottom: 20px;
+   }
+   
+   .container label {
+     display: block;
+     margin-bottom: 5px;
+   }
+   
+   .container input[type="text"],
+   .container textarea,
+   input[type="file"] {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+     box-sizing: border-box;
+   }
+   
+   .container button[type="submit"] {
+     background-color:rgba(7, 10, 64, 1);
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 3px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+   
+   }
+   
+   .container button[type="submit"]:hover {
+     background-color: #0056b3;
+   }
+   
+   .container #blogs-list {
+     list-style: none;
+     padding: 0;
+   }
+   
+   .container .blog-item {
+     background-color: #f9f9f9;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     padding: 10px;
+     margin-bottom: 10px;
+   }
+   
+   .container .blog-item h3 {
+     margin-top: 0;
+   }
+   
+   .container .blog-item img {
+     width: 100%;
+     border-radius: 5px;
+     margin-bottom: 10px;
+   }
  }

@@ -6,90 +6,37 @@
     <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
     <link rel="stylesheet" href="/public/css/blogs.css">
     <link rel="stylesheet" href="/public/css/responsiveness.css">
-    <script src="/public/js/blogs.js"></script>
+    <script src="/public/js/adiminBlogs.js"></script>
+    
     <title>Rodrigue</title>
 </head>
-<body>
+<body onload="displayBlogs()">
   <a href="/admin/Admin.html">Back home</a>
-  <div class="blogs" id="blogs">
-  <h2 class="page-title">Manage Your  Blogs </h2>
-  <div class="article-holder">
+  <div class="blogs" id="blog">
       
-    <div class="article">
-      <img src="/images/server.jpg" alt="">
-      <div class="desc">
-      <h3>Andela ATLP</h3>
-      <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
-      <div class="icons-holder">
-      <span class="icons">
-        <i class="fa-regular fa-thumbs-up"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-regular fa-comment"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-solid fa-share-nodes"></i>
-      </span>
+    <h2 class="page-title">Explore Blogs </h2>
+    <div class="article-holder" id="blogs-container">
     </div>
-      </div>
-    </div>
-    <div class="article">
-      <img src="/images/server.jpg" alt="">
-      <div class="desc">
-      <h3>Andela ATLP</h3>
-      <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
-      <div class="icons-holder">
-      <span class="icons">
-        <i class="fa-regular fa-thumbs-up"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-regular fa-comment"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-solid fa-share-nodes"></i>
-      </span>
-    </div>
-      </div>
-    </div>
-    <div class="article">
-      <img src="/images/server.jpg" alt="">
-      <div class="desc">
-      <h3>Andela ATLP</h3>
-      <p>get skills for software development get skills for software development get skills for software development get skills for software development </p>
-      <div class="icons-holder">
-      <span class="icons">
-        <i class="fa-regular fa-thumbs-up"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-regular fa-comment"></i>
-        <p>25</p>
-        </span>
-        <span class="icons">
-        <i class="fa-solid fa-share-nodes"></i>
-      </span>
-    </div>
-      </div>
-    </div>
-    
-  
- </div>
-        <div class="add-article"  onclick="openAddBlog()">
-            <i class="fa-regular fa-square-plus"></i>
-            <h5>New Article</h5>
-        </div>
+    <div class="container">
+      <h1>Add New Blog</h1>
+      <form id="add-blog-form">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+          
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" required></textarea>
+          
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+          
+          <button type="submit" onclick="addNewBlog()">Add Blog</button>
+      </form>
+      
+  </div>
+   </div>
+        
        </div>
-    <div class="addblog" id="addblog">
-      <input type="file" id="blogimage">
-       <label for="heading">Enter Title for article</label>
-      <input type="text" id="heading">
-      <label for="heading">Enter Description for article</label>
-      <textarea name="paragraph" id="paragraph" cols="20" rows="5"></textarea>
-      <input type="submit" value="Add Blog" id="submitblog" onclick="addBlog()">
-    </div>
+   
+    
 </body>
 </html>
