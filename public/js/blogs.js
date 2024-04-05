@@ -12,22 +12,36 @@
                 return response.json();
 
             }).then(blogs=>{
-             blogs.forEach(blog => {
-                const blogElement=document.createElement('div')
-            blogElement.classList.add('blog');
-            blogElement.innerHTML = `
+                blogs.forEach(blog => {
+                    const blogElement=document.createElement('div')
+                    blogElement.classList.add('blog');
+                    blogElement.innerHTML = `
                     <h2>${blog.title}</h2>            
                     <div class="image">
-                         <img class="blog-image" src="${blog.image}" alt="Blog Image">
+                    <img class="blog-image" src="${blog.image}" alt="Blog Image">
                     </div>
                     <p>${blog.content}</p>
                     <button class="like-btn" data-id="${blog._id}">Like</button>
                     <textarea class="comment-input" placeholder="Add a comment"></textarea>
                     <button class="comment-btn" data-id="${blog._id}">Comment</button>
-                    <div class="comments" data-id="${blog._id}"></div>
+                    <div class="comments" data-id="${blog._id}">
+                    <p>${blog.comments.length} comments</p>                    
+                  </div>
                     <div class="likes-count">Likes: <span>${blog.likes}</span></div>
-            `   
+                    `   
+                    
           blogsContainer.appendChild(blogElement); 
+          const commentsContainer = blogElement.querySelector('.comments');
+          const savedComments = blog.comments;
+          if (savedComments) {
+            savedComments.forEach(comment => {
+                const commentElement = document.createElement('p');
+                commentElement.textContent = comment.comment;
+                commentsContainer.appendChild(commentElement);
+            });
+        }
+          
+         
              });
 
             })
@@ -36,6 +50,8 @@
             });
     } catch (error) {
         alert(error.message);
-    }     
+    } 
+    
+    
 }
        
