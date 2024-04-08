@@ -1,9 +1,25 @@
 function sendMessage (sender, email, text)  {
-    var messages = JSON.parse(localStorage.getItem("message")) || [];
-    messages.push({ 'names': sender, 'address': email, 'body': text });
-    localStorage.setItem("message", JSON.stringify(messages));
-    window.alert("Thank you for your message");
-};
+    formData={
+        sender: sender,
+        email: email,
+        messageText: text
+    }
+    try{
+    fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/Sendmessage',{
+        method:"POST",
+        body: JSON.stringify(formData),
+        headers:{
+            "Content-Type": "application/json"
+            }   
+    })
+    .then(response=>{
+      alert(response.json())
+    })
+  }
+  catch(error){
+    console.log("Error")
+  }
+}
 
 
 
@@ -42,5 +58,5 @@ function validateContactForm() {
     }
     
     sendMessage (name, email, message) 
-      return true; 
+       
 }
