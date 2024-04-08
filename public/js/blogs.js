@@ -1,13 +1,18 @@
- const displayBlogs=() =>{
-    const blogsContainer = document.getElementById('blogs-container');   
+ const displayBlogs=async() =>{
+    const blogsContainer = document.getElementById('blogs-container');  
+    const loading=document.getElementById('loading') 
     
     blogsContainer.innerHTML = ''
     try {
-        fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/blogs')
+          loading.style.display='block'
+        await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/blogs')
             .then(response => {
                 if (!response.ok) {
+     
                     throw new Error('Network response was not ok');
                 }
+            loading.innerText='blogs loaded sccesful'
+           
                 
                 return response.json();
 
@@ -43,12 +48,14 @@
           
          
              });
-
             })
             .catch(error => {
-               console.log(error);
+                console.log(error);
+                loading.innerText='failed to load blog'
             });
+            setTimeout(()=>{loading.style.display='none'},4000)
     } catch (error) {
+        loading.innerText='network error'
         alert(error.message);
     } 
     
