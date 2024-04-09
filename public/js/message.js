@@ -1,5 +1,4 @@
-const sendMessage = async() => {
-    
+const sendMessage = async() => {    
   let sender = document.getElementById('name').value; 
   let email = document.getElementById('email').value; 
   let text = document.getElementById('message').value;
@@ -21,6 +20,8 @@ const sendMessage = async() => {
   };
 
   try {
+       sent.style.display='block'
+       sent.innerText='sending message'
       await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/Sendmessage', {
           method: "POST",
           body: JSON.stringify(formData),
@@ -31,7 +32,6 @@ const sendMessage = async() => {
       .then(response => response.json())
       .then(async( result ) => {
           sent.innerText=await result.message;
-          sent.style.display='block'
           
       })
       .catch(error => {
