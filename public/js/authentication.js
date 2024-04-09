@@ -2,55 +2,34 @@ let changestyle=(Element)=>{
   Element.style.visibility='visible'
 }
 
-let selectUser=()=>{
+let selectUser=async()=>{
+  event.preventDefault()
     username=document.getElementById('emaill').value
-    passwordl=document.getElementById('passwordl').value
-  var users=JSON.parse(localStorage.getItem('users'))||[]
-  var getuser=false
-   var getpassword=false
-  users.forEach((user)=>{
+    password=document.getElementById('passwordl').value
+    const user={
+      email:username,
+      password:password
+    }
+    try{
+      await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/login',{
+    method:'POST',
+     headers:{
+      'Content-Type':'application/json'
+     },
+     body:JSON.stringify(user)
+    
+   })
+   .then(response=>response.json())
+   .then((result)=>{
+    console.log(result)
+   })
+   .catch(error=>{
+    console.log(error)
+   })
+
+  }
+  catch(error){
+    console.log(error)
+  }
    
-    if(user.name===username){
-      getuser=true;
-        if(user.password===passwordl){
-          getpassword=true;
-            return;
-        }
-        
-        else{
-    getpassword=false
-        }
-        return;
-       }
-       
-       else{
-        getuser=false
-       }
-   
-  }); 
-  if(getuser ===true && getpassword===true) {
-    document.getElementById('passwordl').style.borderColor=''
-    document.getElementById('passwordl').style.borderColor=''
-  return true
-  }
-  else if(getuser===true && getpassword===false){
-    document.getElementById('passwordvalid').style.visibility = "visible";
-    setTimeout(function() {     
-    
-      document.getElementById('passwordvalid').style.visibility = "hidden";
-  }, 2000);
-    return false
-  }
-  else{
-    
-    document.getElementById('emailvalid').style.visibility = "visible";
-
-
-setTimeout(function() {
-    
-    document.getElementById('emailvalid').style.visibility = "hidden";
-}, 2000);
-
-   return false
-  }
-}
+    }
