@@ -14,7 +14,8 @@
     <script src="/public/js/message.js"></script>
     <script src="/public/js/comment.js"></script>
     <script src="/public/js/blogs.js"></script>
-     <title>Rodrigue</title>
+     <script src="/public/js/sendmessage.js"></script>
+    <title>Rodrigue</title>
      </head>
      <body onresize="resetProperty()" onload="displayBlogs()" >
 
@@ -134,7 +135,8 @@
   </div>
     <div class="contactpage" id="contact">
       <h2 class="page-title">Get in touch with us</h2>
-      <form action="###" onsubmit="return validateContactForm()">
+      <h4 id="sent" style="text-align:center;color:rgb(0, 229, 255);display:none"></h4>
+      <form>
       <label for="name">Full Name</label> <p id="namevalid"></p>
       <p id="errorname" class="error"></p>
         <input type="text" placeholder="Name" id="name"required >
@@ -144,10 +146,10 @@
         <label for="message">Message</label>
         <textarea name="textMessage" id="message" placeholder="enter your message" required ></textarea>
        <span class="subscribe">
-        <input type="checkbox" value="">
+        <input id="check" type="checkbox" value="">
        <p>Subscribe to our Newsletter</p>
        </span>
-       <input type="submit" value="Send">
+       <button onclick=" validateContactForm()">Send</button>
        </form>
        <div class="address">
         <span class="social">

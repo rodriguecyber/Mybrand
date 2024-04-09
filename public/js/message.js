@@ -1,29 +1,54 @@
-function sendMessage (sender, email, text)  {
-    formData={
-        sender: sender,
-        email: email,
-        messageText: text
-    }
-    try{
-    fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/Sendmessage',{
-        method:"POST",
-        body: JSON.stringify(formData),
-        headers:{
-            "Content-Type": "application/json"
-            }   
-    })
-    .then(response=>{
-      alert(response.json())
-    })
+const sendMessage = async() => {
+    
+  let sender = document.getElementById('name').value; 
+  let email = document.getElementById('email').value; 
+  let text = document.getElementById('message').value;
+  let sent=document.getElementById('sent') 
+  let checkbox=document.getElementById('check') 
+    let check
+  if(checkbox.checked){
+    check=true
   }
-  catch(error){
-    console.log("Error")
+  else{
+  check=false
   }
-}
+  
+  const formData = {
+      name: sender,
+      email: email,
+      text: text,
+      subscribe:check
+  };
+
+  try {
+      await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/Sendmessage', {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+              "Content-Type": "application/json"
+          }
+      })
+      .then(response => response.json())
+      .then(async( result ) => {
+          sent.innerText=await result.message;
+          sent.style.display='block'
+          
+      })
+      .catch(error => {
+          console.log(error);
+      });
+      
+      setTimeout(()=>{sent.style.display='none'},4000)
+  
+    } catch (error) {
+      alert("Error:", error); 
+  }
+};
 
 
 
-function validateContactForm() {
+const validateContactForm = async() =>{
+    event.preventDefault()
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
@@ -57,6 +82,10 @@ function validateContactForm() {
 
     }
     
-    sendMessage (name, email, message) 
+   await sendMessage () 
+    document.getElementById('name').value='';
+   document.getElementById('email').value='';
+   document.getElementById('message').value='';
+
        
 }
