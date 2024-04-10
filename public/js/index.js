@@ -15,7 +15,7 @@ let closeMenu = () =>{
 }
  let openLogin=()=>{
    document.getElementById('login').style.display="block"
-   document.getElementById('signup').style.display='none'
+  //  document.getElementById('signup').style.display='none'
  }
  let closeLogin=()=>{
    document.getElementById('login').style.display="none"
@@ -29,7 +29,7 @@ let closeMenu = () =>{
     }
  }
  let openSignup = () =>{
-   document.getElementById('signup').style.display="block"
+  //  document.getElementById('signup').style.display="block"
    document.getElementById('login').style.display="none"
  }
 
