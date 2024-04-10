@@ -1,7 +1,6 @@
 let selectMessage = () => {
     var templateDiv = document.getElementById('messages');
     var divContainer = document.getElementById('side');
-    var messages = JSON.parse(localStorage.getItem('message')) || [];
 
     messages.forEach((message, index) => {
         if (index === 0) {

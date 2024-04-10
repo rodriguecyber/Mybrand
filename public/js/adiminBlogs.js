@@ -1,124 +1,121 @@
-function displayBlogs() {
-  const blogsContainer = document.getElementById('blogs-container');
-
- 
-  function renderBlogs() {
-      blogsContainer.innerHTML = '';
-      const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-      blogs.forEach((blog, index)  => {
-         
-          const blogElement = document.createElement('div');
-          blogElement.classList.add('blog');
-          blogElement.innerHTML = `
-          <span class="delete" id='${blog.title}' onclick="deleted(this)">Delete</span>
-              <h2>${blog.title}</h2>            
-              <div class="image">
-              <img class="blog-image" src="${blog.image}" alt="Blog Image">
-              </div>
-              <p>${blog.content}</p>
-              <button class="like-btn" data-id="${blog.id}">Like</button>
-              <textarea class="comment-input" placeholder="Add a comment"></textarea>
-              <button class="comment-btn" data-id="${blog.id}">Comment</button>
-              <div class="comments" data-id="${blog.id}"></div>
-              <div class="likes-count">Likes: <span>${blog.likes}</span></div>
-             
-          `;
-          blogsContainer.appendChild(blogElement);
-
-          const likeBtn = blogElement.querySelector('.like-btn');
-          likeBtn.addEventListener('click', handleLike);
-
-          const commentBtn = blogElement.querySelector('.comment-btn');
-          commentBtn.addEventListener('click', handleComment);
-
-          
-          const savedComments = JSON.parse(localStorage.getItem(`blog_${blog.id}_comments`));
-          const commentsContainer = blogElement.querySelector('.comments');
-          if (savedComments) {
-              savedComments.forEach(comment => {
-                  const commentElement = document.createElement('p');
-                  commentElement.textContent = comment;
-                  commentsContainer.appendChild(commentElement);
-              });
-          }
-         
-      });
-  }
-
- 
-  function handleLike(event) {
-      const blogId = event.target.getAttribute('data-id');
-      const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-      const blogIndex = blogs.findIndex(blog => blog.id == blogId);
-      if (blogIndex !== -1) {
-          blogs[blogIndex].likes = (blogs[blogIndex].likes || 0) + 1;
-          localStorage.setItem('blogs', JSON.stringify(blogs));
-          renderBlogs();
-      }
-  }
-
- 
-  function handleComment(event) {
-      const blogId = event.target.getAttribute('data-id');
-      const commentInput = event.target.parentElement.querySelector('.comment-input');
-      const commentText = commentInput.value.trim();
-      if (commentText !== '') {
-          const commentsContainer = event.target.parentElement.querySelector('.comments');
-          const commentElement = document.createElement('p');
-          commentElement.textContent = commentText;
-          commentsContainer.appendChild(commentElement);
-          saveComment(blogId, commentText);
-          commentInput.value = '';
-      } else {
-          alert('Please enter a valid comment.');
-      }
-  }
-
-  
-  function saveComment(blogId, comment) {
-      const savedComments = JSON.parse(localStorage.getItem(`blog_${blogId}_comments`)) || [];
-      savedComments.push(comment);
-      localStorage.setItem(`blog_${blogId}_comments`, JSON.stringify(savedComments));
-  }
-
- 
-  renderBlogs();
+const getLoginToken = () => {
+    const name = 'loginToken=';
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) === 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+    
+    return ''; 
 }
-function addNewBlog() {
+
+const displayBlogs=async() =>{
+    const blogsContainer = document.getElementById('blogs-container');  
+    // const loading=document.getElementById('loading') 
+    
+    blogsContainer.innerHTML = ''
+    try {
+        //   loading.style.display='block'
+        await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/blogs')
+            .then(response => {
+                if (!response.ok) {
+     
+                    throw new Error('Network response was not ok');
+                }
+            // loading.innerText='blogs loaded sccesful'
+           
+                
+                return response.json();
+
+            }).then(blogs=>{
+                blogs.forEach(blog => {
+                    const blogElement=document.createElement('div')
+                    blogElement.classList.add('blog');
+                    blogElement.innerHTML = `
+                    <h2>${blog.title}</h2>            
+                    <div class="image">
+                    <img class="blog-image" src="${blog.image}" alt="Blog Image">
+                    </div>
+                    <p>${blog.content}</p>
+                    <button class="like-btn" data-id="${blog._id}">Like</button>
+                    <textarea class="comment-input" placeholder="Add a comment"></textarea>
+                    <button class="comment-btn" data-id="${blog._id}">Comment</button>
+                    <div class="comments" data-id="${blog._id}">
+                    <p>${blog.comments.length} comments</p>                    
+                  </div>
+                    <div class="likes-count">Likes: <span>${blog.likes}</span></div>
+                    `   
+                    
+          blogsContainer.appendChild(blogElement); 
+          const commentsContainer = blogElement.querySelector('.comments');
+          const savedComments = blog.comments;
+          if (savedComments) {
+            savedComments.forEach(comment => {
+                const commentElement = document.createElement('p');
+                commentElement.textContent = comment.comment;
+                commentsContainer.appendChild(commentElement);
+            });
+        }
+          
+         
+             });
+            })
+            .catch(error => {
+                console.log(error);
+                // loading.innerText='failed to load blog'
+            });
+            // setTimeout(()=>{loading.style.display='none'},4000)
+    } catch (error) {
+        // loading.innerText='network error'
+        alert(error.message);
+    } 
+    
+    
+}
+       
+const addNewBlog = async () => {
+    event.preventDefault();
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
-    const imageInput = document.getElementById('image'); // Input element for image file
-    const imageFile = imageInput.files[0];
+    const imageInput = document.getElementById('image').files[0]; // Access the file from the input element
 
-    if (!imageFile) {
+    if (!imageInput) {
         alert('Please select an image');
         return;
     }
 
-    const reader = new FileReader();
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    formData.append('image', imageInput);
 
-    reader.onload = function(event) {
-        const imageDataURL = event.target.result;
+    try {
+        const response = await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/addblog', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${getLoginToken()}` // Assuming getLoginToken() returns the token
+            },
+            body: formData
+        });
 
-        const newBlog = {
-            id: Date.now(),
-            title: title,
-            content: content,
-            image: imageDataURL,
-            likes: 0
-        };
+        if (!response.ok) {
+            throw new Error('Failed to add blog');
+        }
 
-        // Store the new blog in local storage
-        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
-        blogs.push(newBlog);
-        localStorage.setItem('blogs', JSON.stringify(blogs));
-       alert('added new blog')
-      
-        // Optionally, you can perform further actions like showing a success message
-    };
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
 
-    reader.readAsDataURL(imageFile);
-}
 
 let deleted=(blog)=>{
     const blogs = JSON.parse(localStorage.getItem('blogs'))

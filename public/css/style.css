@@ -578,7 +578,7 @@ flex-direction: row;
 }
 .sender{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
  .messages i{
   font-size: 3vw;
@@ -589,10 +589,20 @@ flex-direction: row;
   color: white;
   font-size: 1.5vw;
  }
- .sender p{
-  color:white;
-  font-size: 1vw;
-  text-align: center;
+ .sender-detail h5{
+ color: white;
+ font-size: 0.5vw;
+ text-align: end;
+ }
+ .sender-details{
+ display: flex;
+ flex-direction:row;
+ }
+ .sender-detail p{
+  color:rgb(16, 237, 222);
+  font-size: 1.5vw;
+  text-align:left;
+  font-weight: bolder;
 
  }
    

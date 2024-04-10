@@ -18,7 +18,7 @@ const getLoginToken = () => {
 
 
    const getMessage=async()=>{
-    console.log(getLoginToken())
+    var divContainer = document.getElementById('side');
     try{
      await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/message',{
          method:'GET',
@@ -27,10 +27,34 @@ const getLoginToken = () => {
         'Authorization': `Bearer ${getLoginToken()}`
         }
      })
-     .then(response=> response.json())
      
+     .then(response=>{
+        if(!response.ok)
+        {
+            window.location='../index.html'
+            return;
+        }
+        return response.json()
+    })     
+        
      .then(async(res)=>{
-        console.log({"response":res.status})
+        res.forEach((message, index) => {
+            const messageElement=document.createElement('div')
+            messageElement.classList.add('messages')
+            messageElement.innerHTML=`
+            <i class="fa-regular fa-circle-user userlogo"></i>
+            <span class='sender-detail'>
+            <div class="sender" id="sender">
+            <h4>${message.Sender}</h4>
+            <h5>${message.message[0].sent}</h5>
+            </div>
+            <p>${message.message[0].text}</p>
+            <span>
+             `
+            divContainer.appendChild(messageElement)
+          })
+         
+
      })
      .catch(error=>{
         console.log(error)
