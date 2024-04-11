@@ -31,11 +31,14 @@ const getLoginToken = () => {
      .then(response=>{
         if(!response.ok)
         {
-            window.location='../index.html'
+            window.location='../index.html' 
+            
             return;
+            
         }
+
         return response.json()
-    })     
+      
         
      .then(async(res)=>{
         res.forEach((message, index) => {
@@ -59,9 +62,10 @@ const getLoginToken = () => {
      .catch(error=>{
         console.log(error)
      })
+    })   
     }
     catch(error){
-        console.log(error)
+        console.log({'message':error.message})
     }
 
 

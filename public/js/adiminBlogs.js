@@ -39,14 +39,15 @@ const displayBlogs=async() =>{
                     const blogElement=document.createElement('div')
                     blogElement.classList.add('blog');
                     blogElement.innerHTML = `
-                    <h2>${blog.title}</h2>            
+                    <button style='float:right' onclick='deleteBlog("${blog._id}")'>delete<button>
+                    <h2>${blog.title}</h2>          
                     <div class="image">
                     <img class="blog-image" src="${blog.image}" alt="Blog Image">
                     </div>
                     <p>${blog.content}</p>
-                    <button class="like-btn" data-id="${blog._id}">Like</button>
-                    <textarea class="comment-input" placeholder="Add a comment"></textarea>
-                    <button class="comment-btn" data-id="${blog._id}">Comment</button>
+                    <button class="like-btn" onclick='likeBlog("${blog._id}")'>Like</button>
+                    <textarea class="comment-input" placeholder="Add a comment" id='${blog._id}'></textarea>
+                    <button class="comment-btn" onclick='addComment("${blog._id}")>Comment</button>
                     <div class="comments" data-id="${blog._id}">
                     <p>${blog.comments.length} comments</p>                    
                   </div>
@@ -100,7 +101,7 @@ const addNewBlog = async () => {
         const response = await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/addblog', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${getLoginToken()}` // Assuming getLoginToken() returns the token
+                'Authorization': `Bearer ${getLoginToken()}` 
             },
             body: formData
         });
@@ -127,8 +128,83 @@ let deleted=(blog)=>{
     });
     localStorage.setItem('blogs', JSON.stringify(blogs));
 displayBlogs()
-   
+  }
 
+  const deleteBlog=async(id)=>{
+    
+   await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/deleteblog/${id}`,{
+    method:'DELETE',
+    headers:{
+        'Content-Type':'application/json',
+         'Authorization':`Bearer ${getLoginToken()}`
+    }
+   })
+   .then(response=>{
+     response.json()
+     .then(res=>{
+        console.log(res)
+     })
+    })
+    
+  }
+   const likeBlog = async(id)=>{
+    try{
+        like={
+            liked:true
+        }
+    await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/like/${id}`,{
+     method:'PATCH',
+     headers:{
+        'Content-Type':'application/json',
+     
+     },
+     body:JSON.stringify(like)
      
 
+    })
+    .then(response=>{
+        response.json()
+        .then(res=>{
+            console.log(res)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    })
+
 }
+catch(error){
+    console.error(error)
+}
+   }
+
+   const addComment=async(id)=>{
+    const comment=document.getElementById(id).value
+     body={
+        comment:comment
+     }
+     try{
+     await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/comment/${id}`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"           
+        },
+        body:JSON.stringify(body)
+     })
+     .then(response=>{
+        response.json()
+        .then(res=>{
+            console.log(res)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+        
+     })
+    }
+    catch(error){
+        console.error(error)
+    }
+      
+   }
