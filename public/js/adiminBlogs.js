@@ -1,3 +1,4 @@
+// access login token from cookie
 const getLoginToken = () => {
     const name = 'loginToken=';
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -45,9 +46,6 @@ const displayBlogs=async() =>{
                     <img class="blog-image" src="${blog.image}" alt="Blog Image">
                     </div>
                     <p>${blog.content}</p>
-                    <button class="like-btn" onclick='likeBlog("${blog._id}")'>Like</button>
-                    <textarea class="comment-input" placeholder="Add a comment" id='${blog._id}'></textarea>
-                    <button class="comment-btn" onclick='addComment("${blog._id}")>Comment</button>
                     <div class="comments" data-id="${blog._id}">
                     <p>${blog.comments.length} comments</p>                    
                   </div>
@@ -111,24 +109,15 @@ const addNewBlog = async () => {
         }
 
         const data = await response.json();
-        console.log(data);
+        console.log(data)
+        displayBlogs()
     } catch (error) {
         console.error(error);
     }
 };
 
 
-let deleted=(blog)=>{
-    const blogs = JSON.parse(localStorage.getItem('blogs'))
-    
-    blogs.forEach((b, index) => {
-        if (b.title === blog.id) {
-            blogs.splice(index, 1);
-        }
-    });
-    localStorage.setItem('blogs', JSON.stringify(blogs));
-displayBlogs()
-  }
+
 
   const deleteBlog=async(id)=>{
     
@@ -142,69 +131,10 @@ displayBlogs()
    .then(response=>{
      response.json()
      .then(res=>{
-        console.log(res)
+         console.log(res)
+         displayBlogs()
      })
     })
     
   }
-   const likeBlog = async(id)=>{
-    try{
-        like={
-            liked:true
-        }
-    await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/like/${id}`,{
-     method:'PATCH',
-     headers:{
-        'Content-Type':'application/json',
-     
-     },
-     body:JSON.stringify(like)
-     
-
-    })
-    .then(response=>{
-        response.json()
-        .then(res=>{
-            console.log(res)
-        })
-        .catch(error=>{
-            console.log(error)
-        })
-    })
-
-}
-catch(error){
-    console.error(error)
-}
-   }
-
-   const addComment=async(id)=>{
-    const comment=document.getElementById(id).value
-     body={
-        comment:comment
-     }
-     try{
-     await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/comment/${id}`,{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"           
-        },
-        body:JSON.stringify(body)
-     })
-     .then(response=>{
-        response.json()
-        .then(res=>{
-            console.log(res)
-        })
-        .catch(error=>{
-            console.log(error)
-        })
-
-        
-     })
-    }
-    catch(error){
-        console.error(error)
-    }
-      
-   }
+   

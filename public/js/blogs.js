@@ -16,7 +16,8 @@
                 
                 return response.json();
 
-            }).then(blogs=>{
+            })
+            .then(blogs=>{
                 blogs.forEach(blog => {
                     const blogElement=document.createElement('div')
                     blogElement.classList.add('blog');
@@ -26,9 +27,9 @@
                     <img class="blog-image" src="${blog.image}" alt="Blog Image">
                     </div>
                     <p>${blog.content}</p>
-                    <button class="like-btn" data-id="${blog._id}">Like</button>
-                    <textarea class="comment-input" placeholder="Add a comment"></textarea>
-                    <button class="comment-btn" data-id="${blog._id}">Comment</button>
+                    <button class="like-btn" onclick=likeBlog("${blog._id}")>Like</button>
+                    <textarea class="comment-input" id="${blog._id}" placeholder="Add a comment"></textarea>
+                    <button class="comment-btn" onclick=addComment("${blog._id}")>Comment</button>
                     <div class="comments" data-id="${blog._id}">
                     <p>${blog.comments.length} comments</p>                    
                   </div>
@@ -61,4 +62,66 @@
     
     
 }
-       
+const likeBlog = async(id)=>{
+    try{
+        like={
+            liked:true
+        }
+    await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/like/${id}`,{
+     method:'PATCH',
+     headers:{
+        'Content-Type':'application/json',
+     
+     },
+     body:JSON.stringify(like)
+     
+
+    })
+    .then(response=>{
+        response.json()
+        .then(res=>{
+            console.log(res)
+            displayBlogs()
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    })
+
+}
+catch(error){
+    console.error(error)
+}
+   }
+
+   const addComment=async(id)=>{
+    const comment=document.getElementById(id).value
+     body={
+        comment:comment
+     }
+     try{
+     await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/comment/${id}`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"           
+        },
+        body:JSON.stringify(body)
+     })
+     .then(response=>{
+        response.json()
+        .then(res=>{
+            console.log(res)
+            displayBlogs()
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+        
+     })
+    }
+    catch(error){
+        console.error(error)
+    }
+      
+   }  
