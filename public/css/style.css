@@ -591,7 +591,8 @@ flex-direction: row;
  }
  .sender-detail h5{
  color: white;
- font-size: 0.5vw;
+ /* margin-left: 4vw; */
+ font-size: 1vw;
  text-align: end;
  }
  .sender-details{
