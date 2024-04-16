@@ -86,6 +86,9 @@ const getLoginToken = () => {
     catch(error){
         console.log({'message':error.message})
     }
-
-
    }
+   const logout = ()=>{
+    document.cookie=`loginToken=''; path=/`
+       window.location='../index.html'
+  }
+   

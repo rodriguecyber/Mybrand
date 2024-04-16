@@ -1,108 +1,59 @@
-
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-body{
-    background-color: rgba(7, 10, 64, 1);
-    
+.admin{
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+  height: inherit
 }
-a{
-text-align: left;
-font-size: 1.5vw;
-color: yellow;
-text-decoration: none;
-margin-left:2vw;
-margin-top: px;
+.menu{
+  display: flex;
+  flex-direction:column;
+  background-color: rgba(217, 217, 217, 1);
+  padding: 20px;
+  width: 25%;
+  height: inherit;
 }
-
-h2{
-text-align: center;
-color: aqua;
-font-size: 2.5vw;
+.menu a{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-size: 3.5vw;
 }
-  .portfolio-div{
-   
-    display: flex;
-    flex-direction: row;
-    padding: 2vw;
-    margin-left: 25%;
-    width:50%;
-  }
-  .portfolio-image {
-  width: 50%;
-  height: 100%;
-  border: 1px solid yellow;
-  
-  }
-  
-  .portfolio-image img{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .portfolio-details{
-    padding-bottom: 3px;
-    width:60%;
-    border: 1px solid yellow;
-  }
-  .portfolio-details h3{
-    color: rgba(4, 217, 178, 1);
-    background-color: rgba(45, 75, 166, 0.65);
-    padding:0.2vw;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 2.4vw;
-    }
-    .portfolio-details p{
-      text-indent: 1vw;
-      padding: 0.1vw;
-      margin-top: 1vw;
-      font-size: 1.4vw;
-      margin-left: 1vw;
-      color:white;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .portfolio-details button{
-      background-color: rgba(246, 249, 85, 1);
-      border: none;
-      border-radius: 4px;
-      padding: 0.4vw;
-      margin-left:20vw;
-      margin-top: 3vw;
-      color: rgba(147, 85, 249, 1);
-      font-weight: bolder;
-       font-size: 1vw; 
-    }
-    .portfolio-details button:hover{
-      background-color: rgba(246, 249, 85, 0.7);
-      color:rgba(147, 85, 249, 1);
-      cursor: pointer;
-    }
-    .add-portfolio{
-        text-align: center;
-        
-    }
-     .add-portfolio i{
-        color: yellow;
-        font-size: 4vw;
-     }
-     .add-portfolio h5{
-        color: aqua;
-        font-size: 2vw;
-     }
-     @media screen and (max-width:800px){
-      a{
-        font-size: 3vw;
-      }
-      h2{
-        font-size: 4vw;
-      }
-      .add-portfolio i{
-        font-size: 10vw;
-      }
-      .add-portfolio h5{
-        font-size: 7vw;
-      }
-     }
-     
+.body{
+background-color: rgba(255, 255, 255, 1);
+width: 75%;
+padding: 5%;
+}
+.container span {
+  font-size: 2em;
+  background-color: blue;
+  border-radius: 10px;
+  color:  rgba(217, 217, 217, 1);
+  padding: 12px;
+  margin-top: 20px;
+ max-width:  340px;
+ text-align: center;
+flex-wrap: nowrap;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+}
+.container span p{
+  color:rgb(2, 31, 31);
+  font-size: 1em;
+}
+.container span div{
+display: flex;
+flex-direction: row;
+}
+.container span div *{
+text-align: start;
+font-size: 1em;
+margin-right: 1vw;
+}
