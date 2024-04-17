@@ -32,7 +32,7 @@ const getLoginToken = () => {
         if(!response.ok)
         {
             window.location='../index.html' 
-            
+            document.getElementById('login').style.display="block"
             return;
             
         }
@@ -55,7 +55,9 @@ const getLoginToken = () => {
             }
                }
                else{
-                time=sentdate.getDate()+"/"+(sentdate.getMonth()+1)
+                 time = sentdate.toLocaleString('en-US', { weekday: 'long' }) + " " + sentdate.getDate() + " " + (sentdate.toLocaleString('en-US', { month: 'long' }));
+
+                
                }
             }
             else{
@@ -90,5 +92,5 @@ const getLoginToken = () => {
    const logout = ()=>{
     document.cookie=`loginToken=''; path=/`
        window.location='../index.html'
-  }
+     }
    

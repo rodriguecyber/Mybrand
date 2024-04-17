@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="icon" href="/images/user.png" type="image/png">
+    <link rel="stylesheet" href="/public/css/about.css">
+    <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css">
+    <title>Rodrigue - Dashboard</title>
+</head>
+<body onload="getMessage()">
+    <div class="sidebar">
+        <div class="brandname">RWIGARA Rodrigue</div>
+        <div class="menu">
+            <a  href="/admin/Admin.html">Home</a>
+            <a class="active" href="#">About</a>
+            <a href="/admin/skills.html">Skills</a>
+            <a href="/admin/portfolio.html">Portfolio</a>
+            <a href="/admin/messages.html" >Messages</a>
+            <a href="/admin/blogs.html">Blogs</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </div>
+
+    <div class="content">
+        
+
+        <div class="aboutpage" id="about">
+            <!-- About Page Content -->
+            <h2 class="page-title">About Me</h2>
+            <div class="about-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="/images/passport.jpg" alt="Profile Image">
+                    </div>
+                    <div class="about-text">
+                        <h3>RWIGARA Rodrigue</h3>
+                        <p>Professional full-stack developer with expertise in various web technologies. Passionate about creating elegant solutions to complex problems and constantly learning new skills to stay up-to-date with industry trends.</p>
+                        <p>With years of experience in both front-end and back-end development, I strive to deliver high-quality software that meets the needs of clients and provides a great user experience.</p>
+                        <p>My specialties include:</p>
+                        <ul>
+                            <li>HTML/CSS</li>
+                            <li>JavaScript/TypeScript</li>
+                            <li>React.js/Vue.js</li>
+                            <li>Node.js/Express.js</li>
+                            <li>SQL/NoSQL databases</li>
+                            <li>Responsive web design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+
+    <div class="footer">
+        <div class="left-footer">
+            <h5>Copyright@rwigararodrigue</h5>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-github"></i>
+            </div>
+        </div>
+        <div class="right-footer">
+            <!-- Add any additional footer content here -->
+        </div>
+    </div>
+
+   
+
+    <script src="/public/js/admin.js"></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/isAuthenticated.js" defer></script>
+</body>
+</html>

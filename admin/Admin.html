@@ -3,137 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
     <link rel="icon" href="/images/user.png" type="image/png">
-   <link rel="stylesheet" href="/public/css/responsiveness.css">
-    <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css" >
-    <script src="/public/js/index.js"></script>
-    <script src="/public/js/admin.js"></script>
-    <script src="/public/js/isAuthenticated.js"></script>
-     <title>Rodrigue</title>
-     </head>
-     <body onresize="resetProperty()" onload="getMessage()">
-
-     <div class="menubar">
-          <div class="brandname">RWIGARA Rodrigue</div>
-            <div id="drop" class="dropdown">
-              <a class="home active" onclick="scrollFuction('home');closeMenu()">Home</a>
-              <a class="about"   onclick="scrollFuction('about');closeMenu()">About us</a>
-              <a class="skills" onclick="scrollFuction('skills') ;closeMenu()">Skills</a>      
-            <a href="/admin/portfolio.html" >Portfolio</a>
-            <a  onclick="showMessage() ">Message </a>
-            <a href="/admin/blogs.html">Blog</a>
-            <a href="##" class="login" onclick="logout()" >Logout</a>
-            <i  class="fa-regular fa-circle-xmark " onclick="closeMenu()"></i>
-          </div>
-          <div  class="icon" onclick="openMenu()"><i class="fa fa-bars" ></i></div>
+    <!-- <link rel="stylesheet" href="/public/css/responsiveness.css"> -->
+    <link rel="stylesheet" href="/public/css/fontawesome-free-6.5.1-web\css\all.min.css">
+    <script src="/public/js/getdata.js"></script>
+    <title>Rodrigue - Dashboard</title>
+</head>
+<body onload="admin()" >
+    <div class="sidebar">
+        <div class="brandname">RWIGARA Rodrigue</div>
+        <div class="menu">
+            <a class="active" href="#home">Home</a>
+            <a href="/admin/about.html">About</a>
+            <a href="/admin/skills.html">Skills</a>
+            <a href="/admin/portfolio.html">Portfolio</a>
+            <a href="/admin/messages.html">Messages</a>
+            <a href="/admin/blogs.html">Blogs</a>
+            <a href="#" onclick="logout()">Logout</a>
         </div>
-
-     <div class="admin" id="home">
-      
-      
-     </div>
-
-     <div class="aboutpage" id="about"> 
-      <h2 class="page-title">About Me</h2>
-      <div class="aboutdiv">
-
-      <div class="left">
-        <img src="/images/passport.jpg" alt="profile">
-      </div>
-      
-      <div class="right">
-        <h3>RWIGARA Rodrigue</h3>
-        <h5>Full-stack developer</h5>
-        <p>professional software engineer trained to to develop both front-end and back-end and also mobile apps  witg skills for many programming kanyage</p>
-        <h5>Full-stack developer</h5>
-        <p>professional software engineer trained to to develop both front-end and back-end and also mobile apps  witg skills for many programming kanyage</p>
-       <button id="edit">Edit
-        <i class="fa-regular fa-pen-to-square"></i>
-       </button>
-      </div>
-      </div>
     </div>
-    
-      <div class="skillspage" id="skills">
-        <h2 class="page-title">My Skills in different Technologies </h2>
-        <div class="skillsdiv">
+
+    <div class="content" >
+        <h2>Welcome to Your Dashboard</h2>
+      <div class="admin" id="home">
         
-        <div class="front">
-          <h5>Front-end </h5>
-          <span class="figma">
-            <i class="fa-brands fa-figma"></i>
-            <p>UI/UX </p>
-          </span>
-          <span class="html">
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML </p>
-          </span>
-          <span class="css">
-            <i class="fa-brands fa-css3-alt"></i>
-            <p>CSS </p>
-          </span>
-          <span class="figma">
-            <i class="fa-brands fa-js"></i>
-            <p>JavaScript </p>
-          </span>
-          
-        </div>
-        <div class="back">
-          <h5>Back-end </h5>
-          <span class="database">
-            <i class="fa-solid fa-database"></i>
-            <p>Database </p>
-          </span>
-          <span class="node">
-            <i class="fa-brands fa-node"></i>
-            <p>NodeJS </p>
-          </span>
-          <span class="php">
-            <i class="fa-brands fa-php"></i>
-            <p>PHP</p>
-          </span>
-          
-        </div>
-        <div class="mobile">
-          <h5>Other Technologies</h5>
-          <span>
-            <i class="fa-brands fa-android"></i>
-            <p>Flutter</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-java"></i>
-            <p>Java</p>
-          </span>
-        </div>
-      </div>
+    </div>
+    
+
+        
     </div>
 
-    
-     <div class="footer">
-      <div class="left-footer">
-        <h5>Copyright@rwigararodrigue</h5>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-x-twitter"></i>
-      <i class="fa-brands fa-linkedin"></i>
-      <i class="fa-brands fa-github"></i>
-      </div>
-      <div class="right-footer">
+    <div class="footer">
+        <div class="left-footer">
+            <h5>Copyright@rwigararodrigue</h5>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-github"></i>
+            </div>
+        </div>
+        <div class="right-footer">
+           
+        </div>
+    </div>
 
-      </div>
-     </div>
-     <div class="message-box" id="mess-box">
-      <div class="message-box-heading">
-        <p>Chats</p>
-        <span >
-        <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
-        <i class="fa-solid fa-xmark" onclick="hideMessage()"></i>
-        </span>
-      </div>
-        <div class="side" id="side">
-     
-      </div>
-     </div>
+   
+   
+    <script src="/public/js/admin.js"></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/isAuthenticated.js" defer></script>
 </body>
 </html>

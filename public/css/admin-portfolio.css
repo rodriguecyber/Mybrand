@@ -1,59 +1,93 @@
-*{
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
-.admin{
-  display: flex;
-  flex-direction: row;
-  background-color: aqua;
-  height: inherit
-}
-.menu{
-  display: flex;
-  flex-direction:column;
-  background-color: rgba(217, 217, 217, 1);
-  padding: 20px;
-  width: 25%;
-  height: inherit;
-}
-.menu a{
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+a {
   text-decoration: none;
-  font-size: 3.5vw;
+  color: #007bff; /* Link color */
 }
-.body{
-background-color: rgba(255, 255, 255, 1);
-width: 75%;
-padding: 5%;
+
+a:hover {
+  text-decoration: underline;
 }
-.container span {
-  font-size: 2em;
-  background-color: blue;
-  border-radius: 10px;
-  color:  rgba(217, 217, 217, 1);
-  padding: 12px;
-  margin-top: 20px;
- max-width:  340px;
- text-align: center;
-flex-wrap: nowrap;
+
+h2 {
+  text-align: center;
 }
-.container{
-  display:flex;
-  flex-direction: column;
+
+/* Portfolio Styles */
+.portfolio-page {
+  display: flex;
   flex-wrap: wrap;
-  height: 500px;
+  justify-content: center;
+  padding: 20px;
 }
-.container span p{
-  color:rgb(2, 31, 31);
-  font-size: 1em;
+
+.portfolio-div {
+  margin: 10px;
+  border: 1px solid #ccc; /* Border around each portfolio item */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  overflow: hidden;
+  max-width: 25vw;
 }
-.container span div{
-display: flex;
-flex-direction: row;
+
+.portfolio-image img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ccc; /* Border between image and details */
 }
-.container span div *{
-text-align: start;
-font-size: 1em;
-margin-right: 1vw;
+
+.portfolio-details {
+  padding: 20px;
+}
+
+.portfolio-details h3 {
+  margin-top: 0;
+}
+
+.portfolio-details p {
+  margin-top: 0;
+}
+
+button {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Button hover background color */
+}
+
+/* Add Portfolio Button Styles */
+.add-portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.add-portfolio i {
+  margin-right: 5px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .portfolio-div {
+      width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio-div {
+      width: calc(100% - 20px);
+  }
 }

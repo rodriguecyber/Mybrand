@@ -1,0 +1,194 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.brandname {
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.menu a.active {
+    background-color: #080590;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.page-title {
+    margin-top: 0;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.social-icons i {
+    margin: 0 5px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+}
+
+.admin {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.admin h2 {
+    margin-top: 0;
+}
+
+
+.dashboard-widgets {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.widget {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(50% - 30px); 
+}
+
+.widget h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.widget ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.widget ul li {
+    padding: 5px 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .widget {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Container styles */
+#home {
+    max-width: 600px; /* Adjust the max width as needed */
+    margin: 90px auto; 
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Individual statistic item styles */
+#home span {
+    display: block;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px rgb(212, 209, 209) solid;
+   
+}
+
+#home span:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last item */
+}
+
+/* Title styles */
+#home h5 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #080590;
+}
+
+/* Value styles */
+#home p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Additional styles for specific elements */
+#home div {
+    margin-top: 5px;
+    
+}
+
+#home div:last-child {
+    margin-top: 10px;
+}
+
+#home div h5 {
+    font-size: 14px;
+    font-weight: normal;
+}
