@@ -1,10 +1,14 @@
  const displayBlogs=async() =>{
     const blogsContainer = document.getElementById('blogs-container');  
-    const loading=document.getElementById('loading') 
+    const loading=document.createElement('div')
+    loading.classList.add('alert')
+    
     
     blogsContainer.innerHTML = ''
     try {
-          loading.style.display='block'
+        loading.innerHTML='loading blogs'
+          blogsContainer.appendChild(loading)
+          
         await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/blogs')
             .then(response => {
                 if (!response.ok) {

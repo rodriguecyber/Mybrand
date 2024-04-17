@@ -690,14 +690,14 @@ flex-direction: row;
  
 }
 
-/* a {
-  text-decoration: none;
-  color: #007bff;
+.alert{
+  background-color: green;
+  position: fixed;
+  right:0;
+  top:0;
+  padding:12px;
+  margin:30px
 }
-
-a:hover {
-  text-decoration: underline;
-} */
     
     
     

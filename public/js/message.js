@@ -2,7 +2,8 @@ const sendMessage = async() => {
   let sender = document.getElementById('name').value; 
   let email = document.getElementById('email').value; 
   let text = document.getElementById('message').value;
-  let sent=document.getElementById('sent') 
+  const Loading=document.createElement('div') 
+  Loading.classList.add('alert')
   let checkbox=document.getElementById('check') 
     let check
   if(checkbox.checked){
@@ -20,8 +21,8 @@ const sendMessage = async() => {
   };
 
   try {
-       sent.style.display='block'
-       sent.innerText='sending message'
+      Loading.innerHTML='sending message'
+      document.getElementById('blogs-container').appendChild(Loading)
       await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/Sendmessage', {
           method: "POST",
           body: JSON.stringify(formData),
@@ -31,14 +32,15 @@ const sendMessage = async() => {
       })
       .then(response => response.json())
       .then(async( result ) => {
-          sent.innerText=await result.message;
+          Loading.innerHTML = await result.message;
           
       })
       .catch(error => {
+        Loading.innerHTML = 'failed to send message';
           console.log(error);
       });
       
-      setTimeout(()=>{sent.style.display='none'},4000)
+      setTimeout(()=>{Loading.style.display='none'},4000)
   
     } catch (error) {
       alert("Error:", error); 
