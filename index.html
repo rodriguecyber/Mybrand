@@ -193,9 +193,9 @@
      </div>
      <div class="login-page" id="login">
       <i class="fa-solid fa-x x" onclick="closeLogin()"></i>
-      <form  action="/admin/Admin.html" onsubmit="return selectUser()">
+      <form >
         <h1>Admin Login</h1>
-        <p id="emailvalid">&#9888;User not Found</p>
+        <p id="emailvalid">&#9888;invalid email</p>
         <div id="loginemail">
           <i class="fa-regular fa-envelope"></i>
       <input type="Email" placeholder="Email:" id="emaill" required>
@@ -205,7 +205,7 @@
           <i class="fa-solid fa-lock"></i>
       <input type="Password" placeholder="Password" id="passwordl" >
     </div>
-    <input type="submit" value="Login" >
+    <input type="submit" value="Login" onclick="validateSignPage()">
     <p><a  onclick="">forgot password</a></p>
       </form>
      </div>

@@ -16,9 +16,6 @@
         const container = document.getElementById('home');
         const data = await getdata();
         const message =await getmessage()
-      //   message.forEach(element=>{
-      //       console.log(element)
-      //   })
 
         data.forEach(element => {
             likes += element.likes;
