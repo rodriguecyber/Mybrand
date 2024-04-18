@@ -1,3 +1,5 @@
+ const alertbox = document.createElement('div')
+ alertbox.classList.add('alert')
 // access login token from cookie
 const getLoginToken = () => {
     const name = 'loginToken=';
@@ -18,25 +20,22 @@ const getLoginToken = () => {
 }
 
 const displayBlogs=async() =>{
-    const blogsContainer = document.getElementById('blogs-container');  
-    // const loading=document.getElementById('loading') 
-    
-    blogsContainer.innerHTML = ''
+    const blogsContainer = document.getElementById('blogs-container');      
     try {
-        //   loading.style.display='block'
+        alertbox.innerHTML='loading blogs...'
+        blogsContainer.appendChild(alertbox)
         await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/blogs')
             .then(response => {
                 if (!response.ok) {
-     
+                    alertbox.innerHTML='server error '
+                    blogsContainer.appendChild(alertbox)
                     throw new Error('Network response was not ok');
-                }
-            // loading.innerText='blogs loaded sccesful'
-           
+                }           
                 
                 return response.json();
 
-            }).then(blogs=>{
-                blogs.forEach(blog => {
+            }).then(async(blogs)=>{
+                 await  blogs.forEach(blog => {
                     const blogElement=document.createElement('div')
                     blogElement.classList.add('blog');
                     blogElement.innerHTML = `
@@ -63,17 +62,19 @@ const displayBlogs=async() =>{
             });
         }
           
-         
+        blogsContainer.appendChild(alertbox)
+        alertbox.innerHTML='blogs loaded'
+       
              });
             })
             .catch(error => {
                 console.log(error);
-                // loading.innerText='failed to load blog'
+                alertbox.innerHTML='failed to load blogs'
             });
-            // setTimeout(()=>{loading.style.display='none'},4000)
+            setTimeout(() => {alertbox.style.visibility='hidden'},2000);
     } catch (error) {
-        // loading.innerText='network error'
-        alert(error.message);
+        alertbox.innerHTML='check your internet'
+        console.log(error.message);
     } 
     
     
@@ -83,10 +84,10 @@ const addNewBlog = async () => {
     event.preventDefault();
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
-    const imageInput = document.getElementById('image').files[0]; // Access the file from the input element
+    const imageInput = document.getElementById('image').files[0]; 
 
     if (!imageInput) {
-        alert('Please select an image');
+        document.getElementById('image').style.color='red'
         return;
     }
 
@@ -96,31 +97,57 @@ const addNewBlog = async () => {
     formData.append('image', imageInput);
 
     try {
-        const response = await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/addblog', {
+        alertbox.style.visibility='visible'
+         alertbox.innerHTML='sending blog'
+        document.getElementById('blogs-container').appendChild(alertbox)
+         await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/addblog', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${getLoginToken()}` 
             },
             body: formData
-        });
-
+        })
+        .then(async(response)=>{
         if (!response.ok) {
+            alertbox.style.visibility='visible'
+         alertbox.innerHTML='Filed to add blog'
+        document.getElementById('blogs-container').appendChild(alertbox)
             throw new Error('Failed to add blog');
         }
 
-        const data = await response.json();
-        console.log(data)
+        await response.json()
+        .then(data=>{
+            alertbox.style.visibility='visible'
+            alertbox.innerHTML=data.message
+           document.getElementById('blogs-container').appendChild(alertbox)
+        
         displayBlogs()
+    })
+    .catch(error=>{
+        alertbox.style.visibility='visible'
+         alertbox.innerHTML='failed to add blog'
+        document.getElementById('blogs-container').appendChild(alertbox)
+        console.log("Error", error);
+    })
+    setTimeout(() => {alertbox.style.visibility='hidden'},2000);
+    })
     } catch (error) {
-        console.error(error);
+        alertbox.style.visibility='visible'
+         alertbox.innerHTML='network error'
+        document.getElementById('blogs-container').appendChild(alertbox) 
+        setTimeout(() => {alertbox.style.visibility='hidden'},2000);
     }
+
 };
 
 
 
 
   const deleteBlog=async(id)=>{
-    
+    try{
+        alertbox.style.visibility='visible'
+         alertbox.innerHTML='deleting post'
+        document.getElementById('blogs-container').appendChild(alertbox)
    await fetch(`https://portfolio-back-end-1-pm2e.onrender.com/brand/deleteblog/${id}`,{
     method:'DELETE',
     headers:{
@@ -130,11 +157,25 @@ const addNewBlog = async () => {
    })
    .then(response=>{
      response.json()
-     .then(res=>{
+     .then(async(res)=>{
+        alertbox.style.visibility='visible'
+         alertbox.innerHTML=await res.blog
+        document.getElementById('blogs-container').appendChild(alertbox)
          console.log(res)
-         displayBlogs()
+        //  displayBlogs()
+     })
+     .catch(error=>{
+        alertbox.style.visibility='visible'
+        alertbox.innerHTML='failed to delete post'
+        console.log(error)
+       document.getElementById('blogs-container').appendChild(alertbox)
      })
     })
-    
+    }
+    catch(error){
+        alertbox.style.visibility='visible'
+        alertbox.innerHTML='network eror'
+       document.getElementById('blogs-container').appendChild(alertbox)
+    }
   }
  

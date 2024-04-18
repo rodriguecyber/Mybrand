@@ -192,3 +192,13 @@ body {
     font-size: 14px;
     font-weight: normal;
 }
+.alert{
+    background-color: rgb(42, 23, 187);
+    position: fixed;
+    right:0;
+    top:0;
+    padding:12px;
+    margin:30px;
+    color:#ddd
+  }
+      

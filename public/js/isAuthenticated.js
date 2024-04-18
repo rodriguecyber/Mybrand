@@ -1,3 +1,5 @@
+alertbox = document.createElement('div')
+alertbox.classList.add('alert')
 const getLoginToken = () => {
     const name = 'loginToken=';
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -19,7 +21,9 @@ const getLoginToken = () => {
 
    const getMessage=async()=>{
     var divContainer = document.getElementById('side');
-    try{
+ try{
+      alertbox.innerHTML='loading message'
+      divContainer.appendChild(alertbox)
      await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/message',{
          method:'GET',
         headers:{
@@ -31,6 +35,8 @@ const getLoginToken = () => {
      .then(response=>{
         if(!response.ok)
         {
+            alertbox.innerHTML='failed to load message'
+            divContainer.appendChild(alertbox)
             window.location='../index.html' 
             document.getElementById('login').style.display="block"
             return;
@@ -41,7 +47,7 @@ const getLoginToken = () => {
       
         
      .then(async(res)=>{
-         res.forEach((message, index) => {
+        await res.forEach((message, index) => {
              const date= new Date()
             let time
             let sentdate = new Date(message.message[0].sent);
@@ -77,8 +83,10 @@ const getLoginToken = () => {
              `
             divContainer.appendChild(messageElement)
           })
-         
-
+          alertbox.innerHTML='message loaded'
+          divContainer.appendChild(alertbox)
+          setTimeout(()=>{alertbox.style.visibility='hidden'},2000)
+          
      })
      .catch(error=>{
         console.log(error)

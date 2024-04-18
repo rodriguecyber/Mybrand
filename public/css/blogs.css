@@ -406,3 +406,12 @@ input[type="file"] {
      margin-bottom: 10px;
    }
  }
+ .alert{
+  background-color: rgb(236, 235, 242);
+  position: fixed;
+  right:0;
+  top:0;
+  padding:12px;
+  margin:30px;
+  color:rgb(25, 49, 231);
+}
