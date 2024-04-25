@@ -28,19 +28,19 @@
 }
 
 
-const isLoggedIn=()=>{
+const isLoggedIn=async()=>{
     try{
-    fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/isloggedin',{
+   await fetch('https://portfolio-back-end-1-pm2e.onrender.com/brand/isloggedin',{
         method:'post',
         headers:{
             'Content-Type':'application/json',
             'Authorization': `Bearer ${getLoginToken()}`
             }
     })
-    .then(response=>{
-        response.json()
-        .then(res=>{
-            if(response.status!=200){
+    .then(async(response)=>{
+        await response.json()
+        .then(async(res)=>{
+            if(await response.status!=200){
                 window.location='../index.html' 
             }
         })
