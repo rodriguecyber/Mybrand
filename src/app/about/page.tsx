@@ -6,7 +6,7 @@ const About = () => {
     <div className=" min-h-screen pt-10 md:pt-32  bg-gradient-to-br from-black to-white w-full">
       <h1 className="text-center font-extrabold text-3xl">EDUCATION</h1>
       <div className="md:mx-32  mt-5 gap-20 md:gap-0 mx-10 flex flex-col md:flex-row md:justify-around">
-        <div className="md:w-1/4 ">
+        <div className="md:w-1/4 flex flex-col gap-4  ">
           <Image
             src="/passport.jpg"
             alt="passport"
@@ -14,6 +14,12 @@ const About = () => {
             width={500}
             height={300}
           />
+          <a
+            className="bg-gradient-to-br from-black to-white text-black font-extrabold p-2 text-center rounded-lg hover:to-black hover:from-white hover:text-black "
+            href="https://drive.google.com/file/d/16aCeeyRxVlZcAEY4UyYbkX9xMKpad2P_/view?usp=sharing"
+          >
+            MY CV
+          </a>
         </div>
 
         <div className="grid  grid-cols-1 gap-0 md:gap-6 lg:grid-cols-2 ">
@@ -35,9 +41,7 @@ const About = () => {
             <h3 className="flex justify-around font-bold ">
               <p>2024</p> - <p>2025</p>
             </h3>
-            <p className="m-3">
-              Software Engeneering 
-            </p>
+            <p className="m-3">Software Engeneering</p>
           </div>
         </div>
       </div>

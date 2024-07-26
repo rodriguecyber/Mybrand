@@ -8,17 +8,16 @@ export default function Home() {
           <h2 className="font-extrabold text-3xl">Hey! I&apos;m RWIGARA</h2>
           <h5 className="text-gray-400 font-bold text-xl">Software Engineer</h5>
           <p className="w-full lg:w-4/5 text-lg text-black font-bold">
-            I&apos;m a full-stack web developer who thrives on tackling
-            challenging problems and constantly pushing the boundaries of my
-            skills. I&apos;m deeply passionate about technology and enjoy
-            exploring new and emerging trends, including blockchain and
-            decentralized applications. I&apos;m driven by a desire to
-            continuously learn and grow, both personally and professionally.
+            As a dedicated and innovative Software Engineer, I bring a robust
+            background in software development, encompassing front-end and
+            back-end technologies, system design, and agile methodologies. With
+            a strong foundation in computer science principles and a passion for
+            cutting-edge technology, I excel at creating efficient, scalable,
+            and user-friendly applications.
           </p>
         </div>
         <div className="rounded-tl-full rounded-bl-full rounded-tr-full bg-gradient-to-tl from-black to-white p-2 flex justify-center lg:justify-start">
           {" "}
-    
           <Image
             className="rounded-tl-full rounded-bl-full rounded-tr-full w-full lg:w-auto"
             src="/passport.jpg"
