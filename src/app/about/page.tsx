@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 
@@ -14,12 +15,12 @@ const About = () => {
             width={500}
             height={300}
           />
-          <a
+          <button
             className="bg-gradient-to-br from-black to-white text-black font-extrabold p-2 text-center rounded-lg hover:to-black hover:from-white hover:text-black "
-            href="https://drive.google.com/file/d/16aCeeyRxVlZcAEY4UyYbkX9xMKpad2P_/view?usp=sharing"
-          >
+           onClick={()=>window.location.href="https://drive.google.com/file/d/16aCeeyRxVlZcAEY4UyYbkX9xMKpad2P_/view?usp=sharing"
+            } >
             MY CV
-          </a>
+          </button>
         </div>
 
         <div className="grid  grid-cols-1 gap-0 md:gap-6 lg:grid-cols-2 ">
