@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const header = () => {
+const Header = () => {
   const [show, setShow] = useState(false);
   const getMenu = () => {};
   const hideMenu = () => {};
@@ -57,4 +57,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
