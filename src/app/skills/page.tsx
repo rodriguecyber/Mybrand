@@ -26,7 +26,7 @@ const Skills = () => {
 
       <div className="">
         <div className="mt-5">
-          <h2 className="text-center font-bold text-4xl">Techical skills</h2>
+          <h2 className="text-center font-bold text-4xl">1. Techical skills</h2>
           <div className=" flex flex-row flex-wrap gap-10 mt-10 mx-6 md:mx-48">
             <Tooltip title="Language: Javascript">
               <SiJavascript className="text-yellow-300 text-5xl md:text-8xl" />
@@ -80,7 +80,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="mt-20">
-          <h3 className="text-center font-bold text-4xl">Professional Skils</h3>
+          <h3 className="text-center font-bold text-4xl">2. Professional Skils</h3>
           <div className="grid md:grid-cols-2 gap-10 text-3xl mt-10 mx-6 md:mx-64">
             <li>Team Collaboration</li>
             <li>Team Management</li>
@@ -92,7 +92,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="mt-20">
-          <h2 className="text-center font-bold text-4xl">Other Skills</h2>
+          <h2 className="text-center font-bold text-4xl">3. Other Skills</h2>
           <div className="grid md:grid-cols-2 gap-10 text-3xl mt-10 mx-6 md:mx-64">
             <li>Accounting</li>
           </div>
