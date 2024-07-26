@@ -79,7 +79,7 @@ const Skills = () => {
               <SiTailwindcss className="text-blue-500 text-5xl md:text-8xl" />
             </Tooltip>
             <Tooltip title="UI/UX: Figma">
-              <SiFigma className="text-blue-500 text-5xl md:text-8xl" />
+              <SiFigma className="text-red-500 text-5xl md:text-8xl" />
             </Tooltip>
           </div>
         </div>
