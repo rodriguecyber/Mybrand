@@ -30,13 +30,13 @@ const About = () => {
           </div>
           <div className=" mb-20  flex flex-col gap-4 bg-blue-100   rounded-xl ">
             <h1 className="bg-blue-500 text-center font-extrabold">
-              UNIVERSITY OF RWANDA
+              ANDELA TECHENICAL LEADERSHIP PROGRAM
             </h1>
             <h3 className="flex justify-around font-bold ">
-              <p>2022</p> - <p>2025</p>
+              <p>2024</p> - <p>2025</p>
             </h3>
             <p className="m-3">
-              Bachelor&apos;s of Business Information Technology
+              Software Engeneering 
             </p>
           </div>
         </div>

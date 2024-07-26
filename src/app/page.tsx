@@ -18,10 +18,10 @@ export default function Home() {
         </div>
         <div className="rounded-tl-full rounded-bl-full rounded-tr-full bg-gradient-to-tl from-black to-white p-2 flex justify-center lg:justify-start">
           {" "}
-          {/* Center image on small screens */}
+    
           <Image
             className="rounded-tl-full rounded-bl-full rounded-tr-full w-full lg:w-auto"
-            src="passport.jpg"
+            src="/passport.jpg"
             alt="passport.jpg"
             width={500}
             height={300}
