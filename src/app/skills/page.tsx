@@ -5,6 +5,7 @@ import {
   SiCss3,
   SiCypress,
   SiDocker,
+  SiFigma,
   SiGit,
   SiJavascript,
   SiJest,
@@ -77,6 +78,9 @@ const Skills = () => {
             <Tooltip title="Frontend: Tailwindcss">
               <SiTailwindcss className="text-blue-500 text-5xl md:text-8xl" />
             </Tooltip>
+            <Tooltip title="UI/UX: Figma">
+              <SiFigma className="text-blue-500 text-5xl md:text-8xl" />
+            </Tooltip>
           </div>
         </div>
         <div className="mt-20">
@@ -95,6 +99,8 @@ const Skills = () => {
           <h2 className="text-center font-bold text-4xl">3. Other Skills</h2>
           <div className="grid md:grid-cols-2 gap-10 text-3xl mt-10 mx-6 md:mx-64">
             <li>Accounting</li>
+            <li>UI/UX Design</li>
+            <li>System Architecture</li>
           </div>
         </div>
       </div>
