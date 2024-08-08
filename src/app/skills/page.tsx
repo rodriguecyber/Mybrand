@@ -2,6 +2,7 @@ import Tooltip from "@mui/material/Tooltip";
 import React from "react";
 import {
   SiBootstrap,
+  SiCircleci,
   SiCss3,
   SiCypress,
   SiDocker,
@@ -9,6 +10,7 @@ import {
   SiGit,
   SiJavascript,
   SiJest,
+  SiMaterialdesign,
   SiMocha,
   SiMongodb,
   SiMysql,
@@ -18,6 +20,7 @@ import {
   SiReact,
   SiSass,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 const Skills = () => {
@@ -31,6 +34,9 @@ const Skills = () => {
           <div className=" flex flex-row flex-wrap gap-10 mt-10 mx-6 md:mx-48">
             <Tooltip title="Language: Javascript">
               <SiJavascript className="text-yellow-300 text-5xl md:text-8xl" />
+            </Tooltip>
+            <Tooltip title="Language: Typescript">
+              <SiTypescript className="text-blue-700 text-5xl md:text-8xl" />
             </Tooltip>
             <Tooltip title="Backend: NodeJS">
               <SiNodedotjs className="text-green-700 text-5xl md:text-8xl" />
@@ -54,29 +60,35 @@ const Skills = () => {
             <Tooltip title="Devops: Docker">
               <SiDocker className="bg-blue-500 text-white text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Unit Testing: Mocha">
+            <Tooltip title="Devops: Circleci">
+              <SiCircleci className=" text-white text-5xl md:text-8xl" />
+            </Tooltip>
+            <Tooltip title="Integration Testing: Mocha">
               <SiMocha className="text-yellow-900 text-5xl md:text-8xl" />
             </Tooltip>
             <Tooltip title="Unit testing: Jest">
               <SiJest className="text-red-900 text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Unit Testing: Cypress">
+            <Tooltip title="End-to-End Testing: Cypress">
               <SiCypress className="text-blue-900 text-5xl md:text-8xl" />
             </Tooltip>
             <Tooltip title="Version control: Git">
               <SiGit className="text-orange-600 text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Frontend: CSS3">
+            <Tooltip title="styling: CSS3">
               <SiCss3 className="text-blue-500 text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Frontend: SASS">
+            <Tooltip title="styling: SASS">
               <SiSass className="text-pink-500 text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Frontend: Bootstrap">
+            <Tooltip title="styling: Bootstrap">
               <SiBootstrap className="text-violet-600 text-5xl md:text-8xl" />
             </Tooltip>
-            <Tooltip title="Frontend: Tailwindcss">
+            <Tooltip title="styling: Tailwindcss">
               <SiTailwindcss className="text-blue-500 text-5xl md:text-8xl" />
+            </Tooltip>
+            <Tooltip title="layout: Material-UI">
+              <SiMaterialdesign className="text-blue-500 text-5xl md:text-8xl" />
             </Tooltip>
             <Tooltip title="UI/UX: Figma">
               <SiFigma className="text-red-500 text-5xl md:text-8xl" />

@@ -16,7 +16,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white md:fixed lg:bottom-0 w-full py-4 flex flex-col md:flex-row justify-around items-center">
+    <div className="bg-black text-white  lg:bottom-0 w-full py-4 flex flex-col md:flex-row justify-around items-center">
       <div className="flex flex-col text-center mb-4 md:mb-0">
         <h1 className="text-lg font-semibold mb-2">PROJECT</h1>
         <ul className="space-y-1">
