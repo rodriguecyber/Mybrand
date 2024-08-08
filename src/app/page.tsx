@@ -29,7 +29,7 @@ export default function Home() {
       </div>
       <div className="flex justify-center lg:justify-start">
         <a
-          href=""
+          href="/skills"
           className="text-center p-3 bg-white rounded-md font-extrabold mt-5 lg:ml-64"
         >
           HIRE ME

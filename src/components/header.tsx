@@ -29,7 +29,7 @@ const Header = () => {
           onClick={() => setShow((prev) => !prev)}
         />
         <div className="text-white">RWIGARA Rodrigue</div>
-        <div className="flex lg:flex-row flex-col gap-5">
+        <div className="flex md:flex-row flex-col gap-5">
           <Link href="/" className="text-white font-bold hover:text-gray-400">
             Home
           </Link>

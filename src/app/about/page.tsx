@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -17,32 +18,55 @@ const About = () => {
           />
           <button
             className="bg-gradient-to-br from-black to-white text-black font-extrabold p-2 text-center rounded-lg hover:to-black hover:from-white hover:text-black "
-           onClick={()=>window.location.href="https://drive.google.com/file/d/16aCeeyRxVlZcAEY4UyYbkX9xMKpad2P_/view?usp=sharing"
-            } >
+            onClick={() =>
+              (window.location.href =
+                "https://drive.google.com/file/d/16aCeeyRxVlZcAEY4UyYbkX9xMKpad2P_/view?usp=sharing")
+            }
+          >
             MY CV
           </button>
         </div>
 
-        <div className="grid  grid-cols-1 gap-0 md:gap-6 lg:grid-cols-2 ">
-          <div className=" mb-20 flex flex-col gap-4 bg-blue-100   rounded-xl ">
-            <h1 className="bg-blue-500 text-center font-extrabold">
+        <div className="grid  grid-cols-1 justify-center gap-0 md:gap-6 lg:grid-cols-2 ">
+          <div className=" pb-10  flex flex-col gap-4 bg-blue-100 rounded-xl ">
+            <h1 className="bg-black py-2 text-white text-center font-extrabold">
+              G.S.Gihundwe 
+            </h1>
+            <h3 className="flex justify-around font-bold ">
+              <p>2018</p> - <p>2021</p>
+            </h3>
+            <p className=" text-center  m-3 font-bold">
+              MATH - COMP - ECON
+            </p>
+            <button className="border-solid border-2 rounded-lg border-black w-fit mx-auto p-2">
+              View Certificate
+            </button>
+          </div>
+          <div className=" pb-10  flex flex-col gap-4 bg-blue-100   rounded-xl ">
+            <h1 className="bg-black py-2 text-white text-center font-extrabold">
               UNIVERSITY OF RWANDA
             </h1>
             <h3 className="flex justify-around font-bold ">
               <p>2022</p> - <p>2025</p>
             </h3>
-            <p className="m-3">
+            <p className=" text-center  m-3 font-bold">
               Bachelor&apos;s of Business Information Technology
             </p>
+            <button className="border-solid border-2 rounded-lg border-black w-fit mx-auto p-2">
+              View Certificate
+            </button>
           </div>
-          <div className=" mb-20  flex flex-col gap-4 bg-blue-100   rounded-xl ">
-            <h1 className="bg-blue-500 text-center font-extrabold">
-              ANDELA TECHENICAL LEADERSHIP PROGRAM
+          <div className=" pb-10   flex flex-col gap-4 bg-blue-100   rounded-xl ">
+            <h1 className="bg-black py-2 text-white text-center font-extrabold">
+              ATLP
             </h1>
             <h3 className="flex justify-around font-bold ">
               <p>2024</p> - <p>2025</p>
             </h3>
-            <p className="m-3">Software Engeneering</p>
+            <p className=" text-center m-3 font-bold">Software Engeneering</p>
+            <button className="border-solid border-2 rounded-lg border-black w-fit mx-auto p-2">
+              View Certificate
+            </button>
           </div>
         </div>
       </div>
