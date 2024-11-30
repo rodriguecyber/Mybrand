@@ -1,13 +1,92 @@
 import Image from "next/image";
+import {
+  FaFacebook,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="w-full bg-gradient-to-br from-black to-white h-screen overflow-x-auto">
-      <div className="flex flex-col lg:flex-row mt-32 lg:ml-32 ml-10 lg:mr-32 lg:justify-around">
-        <div className="h-full mb-10 lg:mb-0">
-          <h2 className="font-extrabold text-3xl">Hey! I&apos;m RWIGARA</h2>
-          <h5 className="text-gray-400 font-bold text-xl">Software Engineer</h5>
-          <p className="w-full lg:w-4/5 text-lg text-black font-bold">
+    <div>
+      <div
+        id="home  "
+        className="bg-gradient-to-br to-[#84af66] from-[#c55454]"
+      >
+        <div className="items-center h-screen items flex justify-around">
+          <div className="flex flex-col w-1/3  gap-32">
+            <div className="flex flex-col gap-3 items-start">
+              <h2 className="font-extrabold text-5xl">Hey! I&apos;m RWIGARA</h2>
+              <h5 className="text-gray-400 font-bold text-3xl">
+                Software Engineer
+              </h5>
+              <p className="text-sm text-black font-bold font-sans">
+                As a dedicated and innovative Software Engineer, I bring a
+                robust background in software development, encompassing
+                front-end and back-end technologies, system design, and agile
+                methodologies. With a strong foundation in computer science
+                principles and a passion for cutting-edge technology, I excel at
+                creating efficient, scalable, and user-friendly applications.
+              </p>
+              <a
+                href="/skills"
+                className=" p-3 bg-black text-white rounded-md font-extrabold hover:bg-slate-900 "
+              >
+                HIRE ME
+              </a>
+            </div>
+
+            <div className="flex gap-1">
+              <div className=" bg-red-100 p-2 font-extrabold rounded-sm text-center">
+                <h1>1+ Year</h1>
+                <p>Experience</p>
+              </div>
+              <div className="bg-red-100 p-2 font-extrabold rounded-sm text-center">
+                <h1>10+ </h1>
+                <p>Project Completed</p>
+              </div>
+              <div className="bg-red-100 p-2 font-extrabold rounded text-center">
+                <h1>5 </h1>
+                <p>Happy Client</p>
+              </div>
+            </div>
+          </div>
+
+          <Image
+            className="rounded-md shadow-2xl shadow-black "
+            src="/My-profile.jpg"
+            alt="profile image"
+            width={400}
+            height={300}
+          />
+        </div>
+      </div>
+      <div
+        id="about"
+        className="flex mx-auto w-2/3 justify-around items-center shadow-2xl shadow-black p-10 relative bottom-20 bg-white scroll-smooth "
+      >
+        <div className="w-1/3">
+          <Image
+            className="rounded-md w-full  shadow-black "
+            src="/My-profile.jpg"
+            alt="profile image"
+            width={300}
+            height={400}
+          />
+          <div className="flex gap-3 w-fit mx-auto relative bottom-4 bg-white p-2 border-2 border-[#f1eaea] rounded-md  ">
+            <FaFacebookF size={20} color="blue" className="cursor-pointer" />
+            <FaLinkedinIn size={20} color="blue" className="cursor-pointer" />
+            <FaGithub size={20} className="cursor-pointer" />
+            <FaInstagram size={20} color="orange" className="cursor-pointer" />
+            <FaXTwitter size={20} className="cursor-pointer" />
+          </div>
+        </div>
+        <div className="w-1/2 flex flex-col gap-10 ">
+          <h1 className="text-4xl font-extrabold text-center ">
+            Software Engineer
+          </h1>
+          <p className="">
             As a dedicated and innovative Software Engineer, I bring a robust
             background in software development, encompassing front-end and
             back-end technologies, system design, and agile methodologies. With
@@ -15,25 +94,19 @@ export default function Home() {
             cutting-edge technology, I excel at creating efficient, scalable,
             and user-friendly applications.
           </p>
+          <div className="flex gap-2 ">
+            <a href="" className="bg-red-300 text-black rounded-md p-2 ">
+              My project
+            </a>
+            <a
+              href=""
+              className=" text-black rounded-md p-2 border-red-300 border-2"
+            >
+              {" "}
+              Download CV
+            </a>
+          </div>
         </div>
-        <div className="rounded-tl-full rounded-bl-full rounded-tr-full bg-gradient-to-tl from-black to-white p-2 flex justify-center lg:justify-start">
-          
-          <Image
-            className="rounded-tl-full rounded-bl-full rounded-tr-full w-full lg:w-auto"
-            src="/passport.jpg"
-            alt="passport.jpg"
-            width={500}
-            height={300}
-          />
-        </div>
-      </div>
-      <div className="flex justify-center lg:justify-start">
-        <a
-          href="/skills"
-          className="text-center p-3 bg-white rounded-md font-extrabold mt-5 lg:ml-64"
-        >
-          HIRE ME
-        </a>
       </div>
     </div>
   );

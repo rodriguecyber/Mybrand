@@ -83,11 +83,11 @@ const Footer = () => {
         <ul className="flex flex-col gap-2">
           <li className="flex items-center gap-2">
             <FontAwesomeIcon className="w-5 text-green-600" icon={faPhone} />
-            <p>+250 786 605 505</p>
+            <p>+250 787 910 406</p>
           </li>
           <li className="flex items-center gap-2">
             <FontAwesomeIcon className="w-5 text-green-700" icon={faWhatsapp} />
-            <p>+250 786 605 505</p>
+            <p>+250 787 910 406</p>
           </li>
           <li className="flex items-center gap-2">
             <FontAwesomeIcon className="w-5 text-blue-300" icon={faEnvelope} />
