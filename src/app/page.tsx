@@ -43,7 +43,7 @@ export default function Home() {
                 <p>Experience</p>
               </div>
               <div className="bg-red-100 p-2 font-extrabold rounded-sm text-center">
-                <h1>10+ </h1>
+                <h1>9+ </h1>
                 <p>Project Completed</p>
               </div>
               <div className="bg-red-100 p-2 font-extrabold rounded text-center">
