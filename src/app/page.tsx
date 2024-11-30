@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <div
         id="home  "
-        className="bg-gradient-to-br to-[#84af66] from-[#c55454]"
+        className="bg-gradient-to-br to-[#84af66] from-[#c55454] scroll-smooth"
       >
         <div className="items-center h-screen items flex justify-around">
           <div className="flex flex-col w-1/3  gap-32">
@@ -53,9 +53,9 @@ export default function Home() {
             </div>
           </div>
 
-          <Image
+          <img
             className="rounded-md shadow-2xl shadow-black "
-            src="/My-profile.jpg"
+            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
             alt="profile image"
             width={400}
             height={300}
@@ -67,9 +67,9 @@ export default function Home() {
         className="flex mx-auto w-2/3 justify-around items-center shadow-2xl shadow-black p-10 relative bottom-20 bg-white scroll-smooth "
       >
         <div className="w-1/3">
-          <Image
+          <img
             className="rounded-md w-full  shadow-black "
-            src="/My-profile.jpg"
+            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
             alt="profile image"
             width={300}
             height={400}
