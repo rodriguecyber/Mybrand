@@ -5,7 +5,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { FaArrowTrendUp, FaGithub, FaShareFromSquare, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaShareFromSquare, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   
@@ -33,7 +33,7 @@ export default function Home() {
                 creating efficient, scalable, and user-friendly applications.
               </p>
               <a
-                href="/skills"
+                href="https://drive.google.com/file/d/1Vatc09aIdarudXl0KLN7MMYDqAyIHQLE/view?usp=drive_link"
                 className=" p-3 bg-black text-white rounded-md font-extrabold hover:bg-slate-900 "
               >
                 HIRE ME
