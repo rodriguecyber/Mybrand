@@ -60,7 +60,6 @@ export default function Home() {
             className="rounded-md shadow-2xl shadow-black "
             // src="/My-profile.jpg"
             src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
-
             alt="profile image"
             width={400}
             height={300}
@@ -81,11 +80,25 @@ export default function Home() {
             height={400}
           />
           <div className="flex gap-3 w-fit mx-auto relative bottom-4 bg-white p-2 border-2 border-[#f1eaea] rounded-md  ">
-            <FaFacebookF size={20} color="blue" className="cursor-pointer" />
-            <FaLinkedinIn size={20} color="blue" className="cursor-pointer" />
-            <FaGithub size={20} className="cursor-pointer" />
-            <FaInstagram size={20} color="orange" className="cursor-pointer" />
-            <FaXTwitter size={20} className="cursor-pointer" />
+            <a href="https://web.facebook.com/rodri.jazzy/">
+              <FaFacebookF size={20} color="blue" className="cursor-pointer" />
+            </a>
+            <a href="https://www.linkedin.com/in/rwigara-rodrigue-39a61925b/">
+              <FaLinkedinIn size={20} color="blue" className="cursor-pointer" />
+            </a>
+            <a href="https://github.com/rodriguecyber">
+              <FaGithub size={20} className="cursor-pointer" />
+            </a>
+            <a href="https://www.instagram.com/jazzy.rodrigue/">
+              <FaInstagram
+                size={20}
+                color="orange"
+                className="cursor-pointer"
+              />
+            </a>
+            <a href="https://x.com/RwigaraRodrigue">
+              <FaXTwitter size={20} className="cursor-pointer" />
+            </a>
           </div>
         </div>
         <div className="md:w-1/2 flex flex-col gap-10 ">
@@ -105,7 +118,7 @@ export default function Home() {
               My Projects
             </a>
             <a
-              href=""
+              href="https://drive.google.com/file/d/1Vatc09aIdarudXl0KLN7MMYDqAyIHQLE/view?usp=drive_link"
               className=" text-black rounded-md p-2 border-red-300 border-2"
             >
               {" "}
@@ -166,11 +179,17 @@ export default function Home() {
             <div className="m-5 ">
               <h4 className="text-gray-600 ">Fullstack</h4>
               <h1 className="font-extrabold text-md text-green-950">
-                CyberPro Group
+                CyberPro Group web
               </h1>
               <p className="h-10 overflow-auto  font-extralight text-gray-500 text-sm">
                 Dynamic Imformation Website for Cyber Pro Group in collabolation
-                with Edge-Reach Tech
+                with{" "}
+                <a
+                  className="text-green-500"
+                  href="https://www.edgereachtech.com/"
+                >
+                  Edge-Reach Tech
+                </a>
               </p>
               <a
                 className="border-2 border-green-800 rounded-md p-2 flex w-fit items-center gap-2 "
