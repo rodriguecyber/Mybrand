@@ -59,7 +59,7 @@ export default function Home() {
           <img
             className="rounded-md shadow-2xl shadow-black "
             // src="/My-profile.jpg"
-            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
+            src="https://res.cloudinary.com/dcg62af7v/image/upload/v1732799653/My-Profile_tgwyfc.jpg"
             alt="profile image"
             width={400}
             height={300}
@@ -74,7 +74,7 @@ export default function Home() {
           <img
             className="rounded-md w-full  shadow-black "
             // src="/My-profile.jpg"
-            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
+            src="https://res.cloudinary.com/dcg62af7v/image/upload/v1732799653/My-Profile_tgwyfc.jpg"
             // alt="profile image"
             width={300}
             height={400}
