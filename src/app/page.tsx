@@ -58,8 +58,8 @@ export default function Home() {
 
           <img
             className="rounded-md shadow-2xl shadow-black "
-            src="/My-profile.jpg"
-            // src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
+            // src="/My-profile.jpg"
+            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
 
             alt="profile image"
             width={400}
@@ -74,9 +74,9 @@ export default function Home() {
         <div className="md:w-1/3">
           <img
             className="rounded-md w-full  shadow-black "
-            src="/My-profile.jpg"
-            // src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
-            alt="profile image"
+            // src="/My-profile.jpg"
+            src="https://res-console.cloudinary.com/dcg62af7v/thumbnails/v1/image/upload/v1732799653/TXktUHJvZmlsZV90Z3d5ZmM=/drilldown"
+            // alt="profile image"
             width={300}
             height={400}
           />
