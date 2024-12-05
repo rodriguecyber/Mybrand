@@ -28,7 +28,10 @@ const Header = () => {
           className="w-7 text-black md:hidden"
           onClick={() => setShow((prev) => !prev)}
         />
-        <div className="text-black">RWIGARA Rodrigue</div>
+        <div className="text-black flex items-center gap-2">
+          <h1 className="bg-black text-white p-2  rounded-full ">RR</h1>
+          <h1>RWIGARA Rodrigue</h1>
+        </div>
         <div className="flex md:flex-row flex-col gap-5 items-center">
           <Link href="/" className="text-black font-bold hover:text-gray-400">
             Home
@@ -55,7 +58,7 @@ const Header = () => {
             href="#contact"
             className="text-white rounded-md bg-[#830664] p-2  font-bold hover:bg-[#830642]"
           >
-            Contact 
+            Contact
           </Link>
         </div>
       </div>
