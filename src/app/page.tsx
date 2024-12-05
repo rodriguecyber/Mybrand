@@ -130,12 +130,11 @@ export default function Home() {
       <div className="px-10 md:px-32 ">
         <h1 className="text-center font-extrabold text-2xl">Portfolio</h1>
         <p className="md:text-center lg:mx-24 mt-10 text-gray-500">
-          hroughout my experience, I had the opportunity to collaborate with
+          Throughout my experience, I had the opportunity to collaborate with
           diverse teams, contributing to a variety of projects. In addition to
           working on team-driven initiatives, I also took the lead on several
           independent projects, where I was responsible for all stages of
-          development. This included [briefly mention key responsibilities, such
-          as design, coding, testing, etc.], and allowed me to sharpen my
+          development. This included System design,UI/UX design,Fullstack Engineer,Database Manager,Quality Asusurance,Project Manager, and allowed me to sharpen my
           problem-solving skills while delivering high-quality software
           solutions. My ability to work both collaboratively and autonomously
           has been a key strength in successfully completing these projects.
